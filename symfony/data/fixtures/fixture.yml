@@ -6,7 +6,7 @@ Earthquake:
     description: Nicobar Islands, India Region.
     latitude: 9.146
     longitude: 92.26
-    time_of_quake: 2011-06-03 07:27:15
+    time_of_quake: "2011-06-03 07:27:15"
     depth: 100
   record_1:
     id: 3053372
@@ -15,7 +15,7 @@ Earthquake:
     description: Loyalty Islands.
     latitude: -20.991
     longitude: 168.396
-    time_of_quake: 2011-06-03 04:07:14
+    time_of_quake: "2011-06-03 04:07:14"
     depth: 35
   record_2:
     id: 3053191
@@ -24,7 +24,7 @@ Earthquake:
     description: Off East Coast of Honshu, Japan.
     latitude: 37.294
     longitude: 143.912
-    time_of_quake: 2011-06-03 00:05:04
+    time_of_quake: "2011-06-03 00:05:04"
     depth: 31
   record_3:
     id: 3052856
@@ -33,7 +33,7 @@ Earthquake:
     description: Solomon Islands.
     latitude: -10.416
     longitude: 161.504
-    time_of_quake: 2011-06-02 06:47:34
+    time_of_quake: "2011-06-02 06:47:34"
     depth: 164
   record_4:
     id: 3052662
@@ -42,7 +42,7 @@ Earthquake:
     description: Kermadec Islands Region.
     latitude: -31.718
     longitude: -177.669
-    time_of_quake: 2011-06-01 19:21:46
+    time_of_quake: "2011-06-01 19:21:46"
     depth: 24
   record_5:
     id: 3052459
@@ -51,7 +51,7 @@ Earthquake:
     description: Offshore Bio-Bio, Chile.
     latitude: -37.545
     longitude: -73.663
-    time_of_quake: 2011-06-01 12:55:22
+    time_of_quake: "2011-06-01 12:55:22"
     depth: 15
   record_6:
     id: 3052276
@@ -60,7 +60,7 @@ Earthquake:
     description: Grampian National Park, VIC.
     latitude: -37.49
     longitude: 142.425
-    time_of_quake: 2011-06-01 03:29:04
+    time_of_quake: "2011-06-01 03:29:04"
     depth: 2
   record_7:
     id: 3052246
@@ -69,7 +69,7 @@ Earthquake:
     description: Eastern New Guinea Reg PNG.
     latitude: -7.112
     longitude: 147.688
-    time_of_quake: 2011-06-01 02:53:38
+    time_of_quake: "2011-06-01 02:53:38"
     depth: 83
   record_8:
     id: 3052227
@@ -78,7 +78,7 @@ Earthquake:
     description: Vanuatu Islands.
     latitude: -18.04
     longitude: 168.3
-    time_of_quake: 2011-06-01 02:30:30
+    time_of_quake: "2011-06-01 02:30:30"
     depth: 87
   record_9:
     id: 3051987
@@ -87,7 +87,7 @@ Earthquake:
     description: South of Java, Indonesia.
     latitude: -8.898
     longitude: 108.47
-    time_of_quake: 2011-05-31 11:12:29
+    time_of_quake: "2011-05-31 11:12:29"
     depth: 37
   record_10:
     id: 3051905
@@ -96,7 +96,7 @@ Earthquake:
     description: South of Java, Indonesia.
     latitude: -9.221
     longitude: 108.822
-    time_of_quake: 2011-05-31 07:59:44
+    time_of_quake: "2011-05-31 07:59:44"
     depth: 48
   record_11:
     id: 3051660
@@ -105,7 +105,7 @@ Earthquake:
     description: Banda Sea, Indonesia.
     latitude: -7.057
     longitude: 129.439
-    time_of_quake: 2011-05-30 17:55:04
+    time_of_quake: "2011-05-30 17:55:04"
     depth: 186
   record_12:
     id: 3051872
@@ -114,7 +114,7 @@ Earthquake:
     description: E of Ballidu, WA.
     latitude: -30.6
     longitude: 116.972
-    time_of_quake: 2011-05-30 11:48:33
+    time_of_quake: "2011-05-30 11:48:33"
     depth: 10
   record_13:
     id: 3051473
@@ -123,7 +123,7 @@ Earthquake:
     description: E. Coast of N. Island, New Zealand.
     latitude: -38.35
     longitude: 178.462
-    time_of_quake: 2011-05-30 00:42:25
+    time_of_quake: "2011-05-30 00:42:25"
     depth: 33
   record_14:
     id: 3051440
@@ -132,7 +132,7 @@ Earthquake:
     description: Tonga Islands.
     latitude: -15.195
     longitude: -173.3
-    time_of_quake: 2011-05-30 00:06:22
+    time_of_quake: "2011-05-30 00:06:22"
     depth: 0
   record_15:
     id: 3051365
@@ -141,7 +141,7 @@ Earthquake:
     description: Southwest of Sumatra, Indonesia.
     latitude: -7.682
     longitude: 101.743
-    time_of_quake: 2011-05-29 18:24:00
+    time_of_quake: "2011-05-29 18:24:00"
     depth: 2
   record_16:
     id: 3051297
@@ -150,7 +150,7 @@ Earthquake:
     description: Banda Sea.
     latitude: -6.623
     longitude: 129.826
-    time_of_quake: 2011-05-29 13:44:21
+    time_of_quake: "2011-05-29 13:44:21"
     depth: 153
   record_17:
     id: 3051155
@@ -159,7 +159,7 @@ Earthquake:
     description: New Britain Region, PNG.
     latitude: -5.859
     longitude: 149.334
-    time_of_quake: 2011-05-29 07:33:13
+    time_of_quake: "2011-05-29 07:33:13"
     depth: 119
   record_18:
     id: 3051053
@@ -168,7 +168,7 @@ Earthquake:
     description: Java, Indonesia.
     latitude: -8.965
     longitude: 108.508
-    time_of_quake: 2011-05-28 20:28:51
+    time_of_quake: "2011-05-28 20:28:51"
     depth: 9
   record_19:
     id: 3051020
@@ -177,7 +177,7 @@ Earthquake:
     description: Talaud Islands, Indonesia.
     latitude: 4.615
     longitude: 127.708
-    time_of_quake: 2011-05-28 20:17:13
+    time_of_quake: "2011-05-28 20:17:13"
     depth: 86
   record_20:
     id: 3050934
@@ -186,7 +186,7 @@ Earthquake:
     description: Kermadec Islands Region.
     latitude: -27.106
     longitude: -178.164
-    time_of_quake: 2011-05-28 18:37:35
+    time_of_quake: "2011-05-28 18:37:35"
     depth: 324
   record_21:
     id: 3050918
@@ -195,7 +195,7 @@ Earthquake:
     description: Kermadec Islands Region.
     latitude: -27.199
     longitude: -178.049
-    time_of_quake: 2011-05-28 18:35:53
+    time_of_quake: "2011-05-28 18:35:53"
     depth: 330
   record_22:
     id: 3050796
@@ -204,7 +204,7 @@ Earthquake:
     description: Southern Sumatra, Indonesia.
     latitude: -5.74
     longitude: 103.455
-    time_of_quake: 2011-05-28 17:07:42
+    time_of_quake: "2011-05-28 17:07:42"
     depth: 36
   record_23:
     id: 3050754
@@ -213,7 +213,7 @@ Earthquake:
     description: Santa Cruz Islands.
     latitude: -11.781
     longitude: 165.229
-    time_of_quake: 2011-05-28 16:47:19
+    time_of_quake: "2011-05-28 16:47:19"
     depth: 57
   record_24:
     id: 3051514
@@ -222,7 +222,7 @@ Earthquake:
     description: Pierces Creek, ACT.
     latitude: -35.374
     longitude: 148.935
-    time_of_quake: 2011-05-28 12:00:54
+    time_of_quake: "2011-05-28 12:00:54"
     depth: 10
   record_25:
     id: 3051512
@@ -231,7 +231,7 @@ Earthquake:
     description: SE of Terowie, SA.
     latitude: -33.28
     longitude: 139.349
-    time_of_quake: 2011-05-28 10:34:55
+    time_of_quake: "2011-05-28 10:34:55"
     depth: 10
   record_26:
     id: 3050622
@@ -240,5 +240,5 @@ Earthquake:
     description: Vanuatu Islands.
     latitude: -20.045
     longitude: 168.479
-    time_of_quake: 2011-05-28 06:42:15
+    time_of_quake: "2011-05-28 06:42:15"
     depth: 109
