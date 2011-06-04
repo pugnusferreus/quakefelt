@@ -242,3 +242,109 @@ Earthquake:
     longitude: 168.479
     time_of_quake: "2011-05-28 06:42:15"
     depth: 109
+    
+Report:
+  record1:  
+    id: 1
+    earthquake_id: 3052276
+    reporter_name: John Smith
+    contact_phone: 0312341234
+    situation: INSIDE
+    latitude: -37.519529      
+    longitude: 142.502289  
+    building: Outhouse
+    asleep: NO
+    felt: YES
+    other_felt: MOST_FELT
+    motion: MODERATE
+    duration: 25
+    reaction: EXCITEMENT
+    response: DUCKED
+    stand: NO
+    sway: SLIGHT	
+    creak: SLIGHT
+    shelf: RATTLED_LOUDLY
+    picture: NONE_FELL
+    furniture: NO
+    heavy_appliance: NO
+    walls: SOME_CRACKED
+    d_text: We got a bit of a shock, things bounced around a bit but everything was ok
+    mmi: 5
+    distance_from_epicentre: 3.6
+  record2:  
+    id: 2
+    earthquake_id: 3052276
+    reporter_name: Adelaide Johnson
+    contact_phone: 0343214321
+    situation: OUTSIDE
+    latitude: -37.479217       
+    longitude: 142.353287  
+    building: Apartment
+    asleep: WOKE_UP
+    felt: YES
+    other_felt: MOST_FELT
+    motion: VIOLENT
+    duration: 25
+    reaction: VERY_FRIGHTENED
+    response: DUCKED
+    stand: YES
+    sway: VIOLENT
+    creak: LOUD
+    shelf: MANY_FELL
+    picture: SOME_FELL
+    furniture: YES
+    heavy_appliance: SHIFTED_CM
+    walls: PARTIAL_FALL
+    d_text: We were asleep when a rumble woke us up and the walls were shaking and the pictures started to fall off the walls
+    mmi:  5
+    distance_from_epicentre: 4.5
+    
+Damage:
+  record1:  
+    id:  1
+    report_id: 1
+    damage: CRACKED_WINDOW
+  record2:  
+    id:  2
+    report_id: 1
+    damage: SOME_LARGE_WALL_CRACKS  
+  record3:  
+    id:  3
+    report_id: 2
+    damage: MANY_LARGE_WALL_CRACKS
+  record4:  
+    id:  4
+    report_id: 1
+    damage: TILES_FELL
+  record5:  
+    id:  5
+    report_id: 2
+    damage: CHIMNEY_CRACKS
+  record6:  
+    id:  6
+    report_id: 2
+    damage: BROKEN_WINDOWS
+  record7:  
+    id:  7
+    report_id: 1
+    damage: MASONRY_FELL
+  record8:
+    id:  8
+    report_id: 2
+    damage: CHIMNEY_FELL
+  record9:  
+    id:  9
+    report_id: 2
+    damage: WALL_COLLAPSED
+  record10:  
+    id:  10
+    report_id: 2
+    damage: ADDITION_SEPARATED
+  record11:  
+    id:  11
+    report_id: 2
+    damage: BUILDING_MOVED
+  record12:  
+    id:  12
+    report_id: 1
+    damage: HAIRLINE_CRACKS

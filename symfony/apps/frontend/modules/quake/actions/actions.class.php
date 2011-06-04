@@ -29,4 +29,14 @@ class quakeActions extends sfActions
     $this->getResponse()->setContentType('application/json');
     return $this->renderText(json_encode($quakes));
   }
+  
+  public function executeApiQuakeReports(sfWebRequest $request)
+  {
+    sfConfig::set('sf_web_debug', false);
+
+    $reports = ReportTable::getInstance()->findByEarthquakeId($request->getParameter('id'), Doctrine::HYDRATE_ARRAY);
+
+    $this->getResponse()->setContentType('application/json');
+    return $this->renderText(json_encode($reports));
+  }
 }

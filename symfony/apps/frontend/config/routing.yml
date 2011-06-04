@@ -6,9 +6,15 @@ homepage:
   url:   /
   param: { module: quake, action: index }
   
-quake_list:
+quake_list_api:
   url: /quakes.:sf_format
   params: { module: quake, action: apiList }
+  requirements:
+    sf_format: json
+
+quake_reports_api:
+  url: /quake/:id/reports.:sf_format
+  params: { module: quake, action: apiQuakeReports }
   requirements:
     sf_format: json
 
