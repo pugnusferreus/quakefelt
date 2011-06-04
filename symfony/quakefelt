@@ -1,0 +1,42 @@
+
+<VirtualHost *:80>
+  ServerName quakefelt.local
+
+  DocumentRoot "/var/www/quakefelt/trunk/web"
+  DirectoryIndex frontend_dev.php
+  <Directory "/var/www/quakefelt/trunk/web">
+    AllowOverride All
+    Allow from All
+
+Options +FollowSymLinks +ExecCGI
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+
+  # uncomment the following line, if you are having trouble
+  # getting no_script_name to work
+  #RewriteBase /
+
+  # we skip all files with .something
+  RewriteCond %{REQUEST_URI} \..+$
+  RewriteCond %{REQUEST_URI} !\.html$
+  RewriteRule .* - [L]
+
+  # we check if the .html version is here (caching)
+  RewriteRule ^$ index.html [QSA]
+  RewriteRule ^([^.]+)$ $1.html [QSA]
+  RewriteCond %{REQUEST_FILENAME} !-f
+
+  # no, so we redirect to our front web controller
+  RewriteRule ^(.*)$ frontend_dev.php [QSA,L]
+</IfModule>
+
+
+  </Directory>
+
+  Alias /sf /var/www/quakefelt/trunk/lib/vendor/symfony/data/web/sf
+  <Directory "/var/www/quakefelt/trunk/lib/vendor/symfony/data/web/sf">
+    AllowOverride All
+    Allow from All
+  </Directory>
+</VirtualHost>
