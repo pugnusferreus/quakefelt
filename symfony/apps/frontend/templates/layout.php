@@ -48,16 +48,18 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
   <script>window.jQuery || document.write("<script src='js/libs/jquery-1.5.1.min.js'>\x3C/script>")</script>
   
-  <?php include_javascripts() ?>
-  
    <script>
    (function( win, doc ) {
 	
-		var mapcontainer = document.getElementById("mapcontainer"),
-			body = doc.body;
+		var location = doc.getElementById("getLocation"),
+			body = doc.body,
+			distanceThreshhold = 400;
 		
 		/* Geolocation */
 		function getLocation() {
+			
+			// Data is loading
+			$.mobile.pageLoading();
 			
 			if("geolocation" in navigator) {
 				navigator.geolocation.getCurrentPosition(success, error); // Request live position
@@ -66,15 +68,38 @@
 			}
 			
 			function success(pos) {
-				var lat = pos.coords.latitude,
-					lng = pos.coords.longitude,
-					img = document.createElement("img");
-					
-				// Build static image based on user location and insert into main container
-				mapcontainer.src = "http://maps.google.com/maps/api/staticmap?center="+lat+","+lng+"&zoom=12&size=400x200&sensor=false&markers=color:blue%7Clabel:Q%7C"+lat+","+lng;
-				//container.appendChild(img);
-					
+				var coords = pos.coords,
+					lat = coords.latitude,
+					lng = coords.longitude,
+					list = $("#recent-quakes"),
+					point, point2,
+					point1 = new LatLon(lat, lng);
+
 				
+				// Build list of event sbased on RSS feed data, converted to JSON through YQL
+				$.getJSON("http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20rss%20where%20url%3D'http%3A%2F%2Fwww.ga.gov.au%2Fearthquakes%2Fall_recent.rss'&format=json&callback=?",function(data) {
+					$.each(data.query.results.item,function(index,key) {
+						point = key.point.split(" ");
+						point2 = new LatLon(point[0], point[1]);
+						
+						console.log(key.title + ": " + point1.distanceTo(point2) + "km");
+						
+						// Find any quakes within 400km of your location
+						if(point1.distanceTo(point2) <= distanceThreshhold) {
+							list.append(["<li><a href='#'>",
+								"<h3>"+key.title+"</h3>",
+								"<p>"+key.description+"</p>",
+							"</a></li>"].join(''));
+						} else {
+							// No quakes within a 40km distance
+						}
+					});
+					
+					// Hide loader
+					$.mobile.pageLoading(true);
+					
+					$.mobile.changePage("#bar", "slide");
+				});
 			}
 			function error(err) {
 				var postcode = prompt("Something went wrong, enter your postcode:");
@@ -83,12 +108,12 @@
 			}
 		}
 		
-		win.onload = function() {
-			getLocation();
-		}
+		$(location).bind("click", getLocation);
 
-})( this, this.document );
+	})( this, this.document );
    </script>
+   
+  <?php include_javascripts() ?>
   
   <?php if($sf_context->getConfiguration()->getEnvironment() != 'prod'): ?>
   
