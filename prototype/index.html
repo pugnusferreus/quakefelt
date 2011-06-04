@@ -109,7 +109,7 @@
 					point1 = new LatLon(lat, lng);
 
 				
-				// Build list of event sbased on 
+				// Build list of event sbased on RSS feed data, converted to JSON through YQL
 				$.getJSON("http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20rss%20where%20url%3D'http%3A%2F%2Fwww.ga.gov.au%2Fearthquakes%2Fall_recent.rss'&format=json&callback=?",function(data) {
 					$.each(data.query.results.item,function(index,key) {
 						point = key.point.split(" ");
@@ -117,6 +117,7 @@
 						
 						console.log(key.title + ": " + point1.distanceTo(point2) + "km");
 						
+						// Find any quakes within 400km of your location
 						if(point1.distanceTo(point2) <= distanceThreshhold) {
 							list.append(["<li><a href='#'>",
 								"<h3>"+key.title+"</h3>",
