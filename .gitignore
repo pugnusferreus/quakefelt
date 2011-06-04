@@ -32,5 +32,9 @@ publish
 .idea
 
 # build script local files
-build/buildinfo.properties
-build/config/buildinfo.properties
+prototype/build/buildinfo.properties
+prototype/build/config/buildinfo.properties
+
+# symfony log and cache
+symfony/log/*
+symfony/cache/*
