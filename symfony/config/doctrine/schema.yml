@@ -1,0 +1,146 @@
+# config/doctrine/schema.yml
+Earthquake:
+  actAs: 
+    Timestampable: ~ 
+  columns:
+    id: 
+      type: integer 
+      notnull: true 
+      unique: true
+      primary: true
+    magnitude: 
+      type: float
+    link:
+      type: string(400)
+    description:
+      type: string(255)
+    latitude:
+      type: float
+    longitude:
+      type: float
+    time_of_quake:
+      type: datetime
+    depth: 
+      type: float 
+
+Report:
+  actAs: 
+    Timestampable: ~ 
+  columns:
+    id:  
+      type: integer
+      notnull: true 
+      unique: true
+      primary: true
+    earthquake_id:
+      type: integer
+      notnull: true
+    reporter_name: 
+      type: string(255) 
+    contact_phone:
+      type: string(30)
+    contact_email:
+      type: string(255) 
+    situation:
+      type: enum
+      values: ['INSIDE','OUTSIDE','STOPPED_VEHICLE','MOVING_VEHICLE','OTHER']
+      notnull: true	
+    latitude:          
+      type: string(255)
+      notnull: true
+    longitude:
+      type: string(255)
+      notnull: true
+    building:
+      type: string(100)
+      notnull: true
+    asleep:  
+      type: enum
+      values: ['NO','SLEPT_THROUGH','WOKE_UP']
+      notnull: true	
+    felt: 
+      type: integer
+      notnull: true
+    other_felt:
+      type: enum
+      values: ['NO_ANSWER','NO_OTHERS','SOME_FELT','MOST_FELT','ALMOST_ALL']
+      notnull: true	
+    motion:
+      type: enum
+      values: ['NOT_FELT','WEAK','MILD','MODERATE','STRONG','VIOLENT']
+      notnull: true	
+    duration: 
+      type: integer
+    reaction:
+      type: enum
+      values: ['NONE','LITTLE','EXCITEMENT','SOMEWHAT_FRIGHTENED','VERY_FRIGHTENED','EXTREMELY_FRIGHTENED']
+      notnull: true	
+    response:
+      type: enum	  
+      values: ['TOOK_NO_ACTION','DOORWAY','DUCKED','RAN_OUTSIDE','OTHER']
+      notnull: true	
+    stand:
+      type: enum	  
+      values: ['YES','NO']
+      notnull: true	
+    sway: 
+      type: enum	  
+      values: ['NO','SLIGHT','VIOLENT']
+      notnull: true	
+    creak:
+      type: enum	  
+      values: ['NO','SLIGHT','LOUD']
+      notnull: true	
+    shelf:    
+      type: enum	  
+      values: ['NO','RATTLED_SLIGHTLY','RATTLED_LOUDLY','FEW_TOPPLED','MANY_FELL','MOST_FELL']
+      notnull: true	
+    picture:
+      type: enum	  
+      values: ['NO','NONE_FELL','SOME_FELL']
+      notnull: true	
+    furniture:
+      type: enum	  
+      values: ['NO','YES']
+      notnull: true	
+    heavy_appliance:   
+      type: enum	  
+      values: ['NO','SOME_CONTENTS_FELL','SHIFTED_CM','SHIFTED_M','OVERTURNED']
+      notnull: true	
+    walls:
+      type: enum	  
+      values: ['NO','SOME_CRACKED','PARTIAL_FALL','COMPLETE_FALL']
+      notnull: true	
+    d_text:
+      type: string(1000)
+    mmi:   
+      type: float
+    distance_from_epicentre: 
+      type: float 
+  relations:
+    Earthquake: 
+      local: earthquake_id
+      foreign: id
+      foreignAlias: Reports	
+
+Damage:
+  actAs: 
+    Timestampable: ~ 
+  columns:
+    id:  
+      type: integer
+      notnull: true 
+      unique: true
+      primary: true
+    report_id:
+      type: integer
+      notnull: true
+    damage:   
+      type: enum
+      values: ['NONE','HAIRLINE_CRACKS',CRACKED_WINDOW','SOME_LARGE_WALL_CRACKS','MANY_LARGE_WALL_CRACKS','TILES_FELL','CHIMNEY_CRACKS','BROKEN_WINDOWS','MASONRY_FELL','CHIMNEY_FELL','WALL_COLLAPSED','ADDITION_SEPARATED','BUILDING_MOVED']
+      notnull: true	
+  relations:
+    Report: 
+      local: report_id
+      foreign: id
+      foreignAlias: Damages
