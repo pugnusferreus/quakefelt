@@ -6,15 +6,21 @@ default:
     content-type: text/html
 
   metas:
-    #title:        symfony project
+    title:        QuakeFelt Mobile
     #description:  symfony project
     #keywords:     symfony, project
     #language:     en
     #robots:       index, follow
 
-  stylesheets:    [main.css]
+  stylesheets:    
+                  - http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.css
+                  - style.css?v=1
 
-  javascripts:    []
-
+  javascripts:    
+                  - /js/script.js
+                  - http://maps.google.com/maps/api/js?sensor=true
+                  - libs/jquery.mobile-1.0a4.1.min.js
+                  - mylibs/helper.js
+                  
   has_layout:     true
   layout:         layout
