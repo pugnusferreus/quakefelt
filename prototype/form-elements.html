@@ -1,0 +1,312 @@
+<html class="ui-mobile landscape min-width-320px min-width-480px min-width-768px max-width-1024px">​​​​​<head><base href="http://jquerymobile.com/demos/1.0a4.1/docs/forms/">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1">
+	<title>jQuery Mobile Docs - Gallery of Form Controls</title>
+	<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.css">
+	<link rel="stylesheet" href="docs/_assets/css/jqm-docs.css">
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.5.min.js"></script>
+	<script type="text/javascript" src="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.js"></script>
+	<script type="text/javascript" src="http://jquerymobile.com/experiments/themeswitcher/jquery.mobile.themeswitcher.js"></script>
+	<script type="text/javascript" src="http://jquerymobile.com/docs/_assets/js/jqm-docs.js"></script>
+</head> 
+<body class="ui-mobile-viewport"> 
+<div class="ui-page ui-body-b" data-url="jqm-home" data-role="page" data-theme="b" id="jqm-home">
+	<div id="jqm-homeheader">
+
+
+	<div role="main" data-role="content">
+
+		<form action="#" method="get">
+
+			<h2>Form elements</h2>
+
+<div class="ui-field-contain ui-body ui-br" data-role="fieldcontain">
+				<label class="ui-slider" id="feelit-label" for="feelit">Did you feel it?:</label>
+				<select class="ui-slider-switch" name="feelit" id="feelit" data-role="slider">
+					<option value="yes">Yes</option>
+					<option value="no">No</option>
+				</select>
+</div>
+
+<div class="ui-field-contain ui-body ui-br" data-role="fieldcontain">
+			    <fieldset class="ui-corner-all ui-controlgroup ui-controlgroup-vertical" data-role="controlgroup"><div role="heading" class="ui-controlgroup-label">Did others feel it too?:</div><div class="ui-controlgroup-controls">
+			    	
+			         	<div class="ui-radio"><input name="others-choice-1" id="others-choice-1" value="no-others" type="radio"><label class="ui-btn ui-btn-icon-left ui-corner-top ui-btn-up-c" data-theme="c" for="others-choice-1"><span class="ui-btn-inner ui-corner-top"><span class="ui-btn-text">No others felt it</span></span></label></div>
+			         	
+
+			         	<div class="ui-radio"><input name="others-choice-1" id="others-choice-2" value="some-felt-it" type="radio"><label class="ui-btn ui-btn-icon-left ui-btn-up-c" data-theme="c" for="others-choice-2"><span class="ui-btn-inner"><span class="ui-btn-text">Some felt it most didn't</span></span></label></div>
+			         	
+
+			         	<div class="ui-radio"><input name="others-choice-1" id="others-choice-3" value="most-felt-it" type="radio"><label class="ui-btn ui-btn-icon-left ui-btn-up-c" data-theme="c" for="others-choice-3"><span class="ui-btn-inner"><span class="ui-btn-text">Most felt it</span></span></label></div>
+			         	
+
+			         	<div class="ui-radio"><input name="others-choice-1" id="others-choice-4" value="everyone-felt-it" type="radio"><label class="ui-btn ui-btn-icon-left ui-corner-bottom ui-controlgroup-last ui-btn-up-c" data-theme="c" for="others-choice-4"><span class="ui-btn-inner ui-corner-bottom ui-controlgroup-last"><span class="ui-btn-text">Everyone felt it</span></span></label></div>
+			         	
+			    </div></fieldset>
+			</div>
+
+
+<div class="ui-field-contain ui-body ui-br" data-role="fieldcontain">
+			    <fieldset class="ui-corner-all ui-controlgroup ui-controlgroup-vertical" data-role="controlgroup"><div role="heading" class="ui-controlgroup-label">Were you asleep?:</div><div class="ui-controlgroup-controls">
+			    	
+			         	<div class="ui-radio"><input name="sleeping-choice-1" id="sleeping-choice-1" value="not-sleeping" type="radio"><label class="ui-btn ui-btn-icon-left ui-corner-top ui-btn-up-c" data-theme="c" for="sleeping-choice-1"><span class="ui-btn-inner ui-corner-top"><span class="ui-btn-text">No</span></span></label></div>
+			         	
+						<div class="ui-radio"><input name="sleeping-choice-1" id="sleeping-choice-2" value="slept-through-it" type="radio"><label class="ui-btn ui-btn-icon-left ui-btn-up-c" data-theme="c" for="sleeping-choice-2"><span class="ui-btn-inner"><span class="ui-btn-text">Slept through it</span></span></label></div>
+
+			         	<div class="ui-radio"><input name="sleeping-choice-1" id="sleeping-choice-3" value="woke-up" type="radio"><label class="ui-btn ui-btn-icon-left ui-btn-up-c" data-theme="c" for="sleeping-choice-3"><span class="ui-btn-inner"><span class="ui-btn-text">Woke up</span></span></label></div>
+     	
+			    </div></fieldset>
+			</div>
+
+			<div class="ui-field-contain ui-body ui-br" data-role="fieldcontain">
+				<label for="loction-choice-a" class="select ui-select">Where were you?:</label>
+				<div class="ui-select"><select tabindex="-1" name="loction-choice-a" id="loction-choice-a" data-native-menu="false">
+					<option>Please select</option>
+					<option value="inside">Inside</option>
+					<option value="outside">Outside</option>
+					<option value="moving-vehicle">Moving vehicle</option>
+					<option value="stationary-vehicle">Stationary vehicle</option>
+					<option value="other">Other</option>
+				</select></div>
+			</div>
+
+<div class="ui-field-contain ui-body ui-br" data-role="fieldcontain">
+	         <label class="ui-input-text" for="location-other">Other:</label>
+	         <input class="ui-input-text ui-body-null ui-corner-all ui-shadow-inset ui-body-c" name="location-other" id="location-other" value="" type="text">
+			</div>
+
+
+
+			<div class="ui-field-contain ui-body ui-br" data-role="fieldcontain">
+				<label id="shaking-label" class="ui-input-text ui-slider" for="shaking">Shaking strength:</label>
+			 	<input class="ui-input-text ui-body-null ui-corner-all ui-shadow-inset ui-body-c ui-slider-input" name="shaking" id="shaking" value="0" min="0" max="6" data-type="range" type="number">
+			</div>
+
+
+			<div class="ui-field-contain ui-body ui-br" data-role="fieldcontain">
+				<label id="duration-label" class="ui-input-text ui-slider" for="duration">Shaking duration:</label>
+			 	<input class="ui-input-text ui-body-null ui-corner-all ui-shadow-inset ui-body-c ui-slider-input" name="duration" id="duration" value="0" min="0" max="180" data-type="range" type="number">
+			</div>
+
+			<div class="ui-field-contain ui-body ui-br" data-role="fieldcontain">
+				<label id="slider-label" class="ui-input-text ui-slider" for="slider">Your reaction:</label>
+			 	<input class="ui-input-text ui-body-null ui-corner-all ui-shadow-inset ui-body-c ui-slider-input" name="slider" id="slider" value="0" min="0" max="5" data-type="range" type="number">
+			</div>
+
+			<div class="ui-field-contain ui-body ui-br" data-role="fieldcontain">
+	         <label class="ui-input-text" for="name">Other:</label>
+	         <input class="ui-input-text ui-body-null ui-corner-all ui-shadow-inset ui-body-c" name="name" id="name" value="" type="text">
+			</div>
+
+			<div class="ui-field-contain ui-body ui-br" data-role="fieldcontain">
+				<label id="slider-label" class="ui-input-text ui-slider" for="slider">Your response:</label>
+			 	<input class="ui-input-text ui-body-null ui-corner-all ui-shadow-inset ui-body-c ui-slider-input" name="slider" id="slider" value="0" min="0" max="6" data-type="range" type="number">
+			</div>
+
+
+<div class="ui-field-contain ui-body ui-br" data-role="fieldcontain">
+				<label class="ui-slider" id="slider2-label" for="slider2">Was it difficult to stand or walk?:</label>
+				<select class="ui-slider-switch" name="slider2" id="slider2" data-role="slider">
+					<option value="off">Yes</option>
+					<option value="on">No</option>
+				</select>
+</div>
+
+
+
+<h2>Earthquake effects</h2>
+
+<div class="ui-field-contain ui-body ui-br" data-role="fieldcontain">
+				<label class="ui-slider" id="swinging-label" for="slider2">Did you notice swinging objects?:</label>
+				<select class="ui-slider-switch" name="swinging" id="swinging" data-role="slider">
+					<option value="swinging-yes">Yes</option>
+					<option value="swinging-no">No</option>
+				</select>
+</div>
+
+
+			<div class="ui-field-contain ui-body ui-br" data-role="fieldcontain">
+			    <fieldset class="ui-corner-all ui-controlgroup ui-controlgroup-vertical" data-role="controlgroup"><div class="ui-controlgroup-controls">
+			    	
+			         	<div class="ui-radio"><input name="radio-choice-1" id="radio-choice-1" value="choice-1" type="radio"><label class="ui-btn ui-btn-icon-left ui-corner-top ui-btn-up-c" data-theme="c" for="radio-choice-1"><span class="ui-btn-inner ui-corner-top"><span class="ui-btn-text">Slight swinging</span></span></label></div>
+			         	
+
+			         	<div class="ui-radio"><input name="radio-choice-1" id="radio-choice-2" value="choice-2" type="radio"><label class="ui-btn ui-btn-icon-left ui-btn-up-c" data-theme="c" for="radio-choice-2"><span class="ui-btn-inner"><span class="ui-btn-text">Violent swinging</span></span></label></div>      	
+			    </div></fieldset>
+			</div>
+
+<div class="ui-field-contain ui-body ui-br" data-role="fieldcontain">
+				<label class="ui-slider" id="noises-label" for="noises">Did you hear any noises?:</label>
+				<select class="ui-slider-switch" name="noises" id="noises" data-role="slider">
+					<option value="noises-yes">Yes</option>
+					<option value="noises-no">No</option>
+				</select>
+</div>
+
+			<div class="ui-field-contain ui-body ui-br" data-role="fieldcontain">
+			    <fieldset class="ui-corner-all ui-controlgroup ui-controlgroup-vertical" data-role="controlgroup"><div class="ui-controlgroup-controls">
+			    	
+			         	<div class="ui-radio"><input name="noises-choice-1" id="noises-choice-1" value="slight-noise" type="radio"><label class="ui-btn ui-btn-icon-left ui-corner-top ui-btn-up-c" data-theme="c" for="noises-choice-1"><span class="ui-btn-inner ui-corner-top"><span class="ui-btn-text">Slight noise</span></span></label></div>
+			         	
+
+			         	<div class="ui-radio"><input name="noises-choice-1" id="noises-choice-2" value="loud-noise" type="radio"><label class="ui-btn ui-btn-icon-left ui-btn-up-c" data-theme="c" for="noises-choice-2"><span class="ui-btn-inner"><span class="ui-btn-text">Loud noise</span></span></label></div>      	
+			    </div></fieldset>
+			</div>
+
+<div class="ui-field-contain ui-body ui-br" data-role="fieldcontain">
+				<label class="ui-slider" id="shelf-movement-label" for="shelf-movement">Did objects on shelves shift position?:</label>
+				<select class="ui-slider-switch" name="shelf-movement" id="shelf-movement" data-role="slider">
+					<option value="shelf-movement-yes">Yes</option>
+					<option value="shelf-movement-no">No</option>
+				</select>
+</div>
+
+			<div class="ui-field-contain ui-body ui-br" data-role="fieldcontain">
+			    <fieldset class="ui-corner-all ui-controlgroup ui-controlgroup-vertical" data-role="controlgroup"><div class="ui-controlgroup-controls">
+			    	
+			         	<div class="ui-radio"><input name="rattled" id="rattled-choice-1" value="rattled-slightly" type="radio"><label class="ui-btn ui-btn-icon-left ui-corner-top ui-btn-up-c" data-theme="c" for="rattled-choice-1"><span class="ui-btn-inner ui-corner-top"><span class="ui-btn-text">Rattled slightly</span></span></label></div>
+			         	
+
+			         	<div class="ui-radio"><input name="rattled" id="rattled-choice-2" value="rattled-loudly" type="radio"><label class="ui-btn ui-btn-icon-left ui-btn-up-c" data-theme="c" for="rattled-choice-2"><span class="ui-btn-inner"><span class="ui-btn-text">Rattled loudly</span></span></label></div>
+			         	
+
+			         	<div class="ui-radio"><input name="rattled" id="rattled-choice-3" value="fell-off" type="radio"><label class="ui-btn ui-btn-icon-left ui-btn-up-c" data-theme="c" for="rattled-choice-3"><span class="ui-btn-inner"><span class="ui-btn-text">A few objects toppled or fell off</span></span></label></div>
+			         	
+
+					<div class="ui-radio"><input name="rattled" id="rattled-choice-4" value="fell-off" type="radio"><label class="ui-btn ui-btn-icon-left ui-btn-up-c" data-theme="c" for="rattled-choice-4"><span class="ui-btn-inner"><span class="ui-btn-text">Many objects fell off</span></span></label></div>
+			  
+
+<div class="ui-radio"><input name="rattled" id="radio-choice-5" value="nearly-everything" type="radio"><label class="ui-btn ui-btn-icon-left ui-corner-bottom ui-controlgroup-last ui-btn-up-c" data-theme="c" for="radio-choice-5"><span class="ui-btn-inner ui-corner-bottom ui-controlgroup-last"><span class="ui-btn-text">Nearly everything fell off</span></span></label></div>       	
+			    </div></fieldset>
+			</div>
+
+<div class="ui-field-contain ui-body ui-br" data-role="fieldcontain">
+				<label class="ui-slider" id="pictures-label" for="pictures">Did pictures on wall move?:</label>
+				<select class="ui-slider-switch" name="pictures" id="pictures" data-role="slider">
+					<option value="pictures-yes">Yes</option>
+					<option value="pictures-no">No</option>
+				</select>
+</div>
+
+			<div class="ui-field-contain ui-body ui-br" data-role="fieldcontain">
+			    <fieldset class="ui-corner-all ui-controlgroup ui-controlgroup-vertical" data-role="controlgroup"><div class="ui-controlgroup-controls">
+			    	
+			         	<div class="ui-radio"><input name="pictures-fell" id="pictures-fell-choice-1" value="none-fell" type="radio"><label class="ui-btn ui-btn-icon-left ui-corner-top ui-btn-up-c" data-theme="c" for="pictures-fell-choice-1"><span class="ui-btn-inner ui-corner-top"><span class="ui-btn-text">Pictures did not fall</span></span></label></div>
+			         	
+
+			         	<div class="ui-radio"><input name="pictures-fell" id="pictures-fell-choice-2" value="some-fell" type="radio"><label class="ui-btn ui-btn-icon-left ui-btn-up-c" data-theme="c" for="pictures-fell-choice-2"><span class="ui-btn-inner"><span class="ui-btn-text">Some pictures fell</span></span></label></div>
+			         	
+
+			         	<div class="ui-radio"><input name="pictures-fell" id="pictures-fell-choice-3" value="nearly-all" type="radio"><label class="ui-btn ui-btn-icon-left ui-btn-up-c" data-theme="c" for="pictures-fell-choice-3"><span class="ui-btn-inner"><span class="ui-btn-text">Nearly all pictures fell</span></span></label></div>     	
+			    </div></fieldset>
+			</div>
+
+<div class="ui-field-contain ui-body ui-br" data-role="fieldcontain">
+				<label class="ui-slider" id="slider2-label" for="slider2">Did any furniture move or topple over?:</label>
+				<select class="ui-slider-switch" name="furniture" id="furniture" data-role="slider">
+					<option value="furniture-yes">Yes</option>
+					<option value="furniture-no">No</option>
+				</select>
+</div>
+
+<div class="ui-field-contain ui-body ui-br" data-role="fieldcontain">
+				<label class="ui-slider" id="slider2-label" for="slider2">Was a heavy appliance affected?:</label>
+				<select class="ui-slider-switch" name="appliance" id="appliance" data-role="slider">
+					<option value="appliance-yes">Yes</option>
+					<option value="appliance-no">No</option>
+				</select>
+</div>
+
+			<div class="ui-field-contain ui-body ui-br" data-role="fieldcontain">
+			    <fieldset class="ui-corner-all ui-controlgroup ui-controlgroup-vertical" data-role="controlgroup"><div class="ui-controlgroup-controls">
+			    	
+			         	<div class="ui-radio"><input name="appliance-shifted" id="appliance-shifted-choice-1" value="some-movement" type="radio"><label class="ui-btn ui-btn-icon-left ui-corner-top ui-btn-up-c" data-theme="c" for="appliance-shifted-choice-1"><span class="ui-btn-inner ui-corner-top"><span class="ui-btn-text">Some contents fell out</span></span></label></div>
+			         	
+
+			         	<div class="ui-radio"><input name="appliance-shifted" id="appliance-shifted-choice-2" value="by-inches" type="radio"><label class="ui-btn ui-btn-icon-left ui-btn-up-c" data-theme="c" for="appliance-shifted-choice-2"><span class="ui-btn-inner"><span class="ui-btn-text">Shifted by inches</span></span></label></div>
+			         	
+
+			         	<div class="ui-radio"><input name="appliance-shifted" id="appliance-shifted-choice-3" value="foot-or-more" type="radio"><label class="ui-btn ui-btn-icon-left ui-btn-up-c" data-theme="c" for="appliance-shifted-choice-3"><span class="ui-btn-inner"><span class="ui-btn-text">Shited by a foot or more</span></span></label></div>     
+
+			         	<div class="ui-radio"><input name="appliance-shifted" id="appliance-shifted-choice-4" value="overturned" type="radio"><label class="ui-btn ui-btn-icon-left ui-btn-up-c" data-theme="c" for="appliance-shifted-choice-4"><span class="ui-btn-inner"><span class="ui-btn-text">Overturned</span></span></label></div>   	
+			    </div></fieldset>
+			</div>
+
+<div class="ui-field-contain ui-body ui-br" data-role="fieldcontain">
+				<label class="ui-slider" id="slider2-label" for="slider2">Were free standing walls or fences damaged?:</label>
+				<select class="ui-slider-switch" name="fences" id="fences" data-role="slider">
+					<option value="fences-yes">Yes</option>
+					<option value="fences-no">No</option>
+				</select>
+</div>
+
+			<div class="ui-field-contain ui-body ui-br" data-role="fieldcontain">
+			    <fieldset class="ui-corner-all ui-controlgroup ui-controlgroup-vertical" data-role="controlgroup"><div class="ui-controlgroup-controls">
+			    	
+			         	<div class="ui-radio"><input name="fence-impact" id="fence-impact-choice-1" value="some-cracking" type="radio"><label class="ui-btn ui-btn-icon-left ui-corner-top ui-btn-up-c" data-theme="c" for="fence-impact-choice-1"><span class="ui-btn-inner ui-corner-top"><span class="ui-btn-text">Some where cracked</span></span></label></div>
+			         	
+
+			         	<div class="ui-radio"><input name="fence-impact" id="fence-impact-choice-2" value="partially-fell" type="radio"><label class="ui-btn ui-btn-icon-left ui-btn-up-c" data-theme="c" for="fence-impact-choice-2"><span class="ui-btn-inner"><span class="ui-btn-text">Some partially fell</span></span></label></div>
+			         	
+
+			         	<div class="ui-radio"><input name="fence-impact" id="fence-impact-choice-3" value="fell-completely" type="radio"><label class="ui-btn ui-btn-icon-left ui-btn-up-c" data-theme="c" for="fence-impact-choice-3"><span class="ui-btn-inner"><span class="ui-btn-text">Some fell completely</span></span></label></div>     
+   	
+			    </div></fieldset>
+			</div>
+
+			<div class="ui-field-contain ui-body ui-br" data-role="fieldcontain">
+			<fieldset class="ui-corner-all ui-controlgroup ui-controlgroup-vertical" data-role="controlgroup"><div role="heading" class="ui-controlgroup-label">Was there any damage to the building?:</div><div class="ui-controlgroup-controls">
+				
+				<div class="ui-checkbox"><input name="building-1a" id="building-1a" class="custom" type="checkbox"><label class="ui-btn ui-btn-icon-left ui-corner-top ui-btn-up-c" data-theme="c" for="building-1a"><span class="ui-btn-inner ui-corner-top"><span class="ui-btn-text">No damage</span></span></label></div>
+				
+
+				<div class="ui-checkbox"><input name="building-2a" id="building-2a" class="custom" type="checkbox"><label class="ui-btn ui-btn-icon-left ui-btn-up-c" data-theme="c" for="building-2a"><span class="ui-btn-inner"><span class="ui-btn-text">Hairline cracks in walls</span>/span></label></div>
+				
+
+				<div class="ui-checkbox"><input name="building-3a" id="building-3a" class="custom" type="checkbox"><label class="ui-btn ui-btn-icon-left ui-btn-up-c" data-theme="c" for="building-3a"><span class="ui-btn-inner"><span class="ui-btn-text">A few large cracks in walls</span></span></label></div>
+				
+
+				<div class="ui-checkbox"><input name="building-4a" id="building-4a" class="custom" type="checkbox"><label class="ui-btn ui-btn-icon-left ui-btn-up-c" data-theme="c" for="building-4a"><span class="ui-btn-inner ui-corner-bottom ui-controlgroup-last"><span class="ui-btn-text">Many large cracks in walls</span></span></label></div>
+
+				<div class="ui-checkbox"><input name="building-5a" id="building-5a" class="custom" type="checkbox"><label class="ui-btn ui-btn-icon-left ui-btn-up-c" data-theme="c" for="building-5a"><span class="ui-btn-inner"><span class="ui-btn-text">Ceiling tiles or lighting fixtures fell</span></span></label></div>
+
+				<div class="ui-checkbox"><input name="building-6a" id="building-6a" class="custom" type="checkbox"><label class="ui-btn ui-btn-icon-left ui-btn-up-c" data-theme="c" for="building-6a"><span class="ui-btn-inner"><span class="ui-btn-text">Cracks in chimney</span></span></label></div>
+
+				<div class="ui-checkbox"><input name="building-7a" id="building-7a" class="custom" type="checkbox"><label class="ui-btn ui-btn-icon-left ui-btn-up-c" data-theme="c" for="building-7a"><span class="ui-btn-inner"><span class="ui-btn-text">One or several cracked windows</span></span></label></div>
+
+				<div class="ui-checkbox"><input name="building-8a" id="building-8a" class="custom" type="checkbox"><label class="ui-btn ui-btn-icon-left ui-btn-up-c" data-theme="c" for="building-8a"><span class="ui-btn-inner"><span class="ui-btn-text">Many windows cracked or broken out</span></span></label></div>
+
+				<div class="ui-checkbox"><input name="building-9a" id="building-9a" class="custom" type="checkbox"><label class="ui-btn ui-btn-icon-left ui-btn-up-c" data-theme="c" for="building-9a"><span class="ui-btn-inner"><span class="ui-btn-text">Masonary fell from block or brick walls</span></span></label></div>
+
+				<div class="ui-checkbox"><input name="building-10a" id="building-10a" class="custom" type="checkbox"><label class="ui-btn ui-btn-icon-left ui-btn-up-c" data-theme="c" for="building-10a"><span class="ui-btn-inner"><span class="ui-btn-text">Old chimney, major damage or fell down </span></span></label></div>
+
+				<div class="ui-checkbox"><input name="building-11a" id="building-11a" class="custom" type="checkbox"><label class="ui-btn ui-btn-icon-left ui-btn-up-c" data-theme="c" for="building-11a"><span class="ui-btn-inner"><span class="ui-btn-text">Modern chimney, major damage or fell down </span></span></label></div>
+
+				<div class="ui-checkbox"><input name="building-12a" id="building-12a" class="custom" type="checkbox"><label class="ui-btn ui-btn-icon-left ui-btn-up-c" data-theme="c" for="building-12a"><span class="ui-btn-inner"><span class="ui-btn-text">Outside walls tilted over or collapsed completely</span></span></label></div>
+
+				<div class="ui-checkbox"><input name="building-13a" id="building-13a" class="custom" type="checkbox"><label class="ui-btn ui-btn-icon-left ui-btn-up-c" data-theme="c" for="building-13a"><span class="ui-btn-inner"><span class="ui-btn-text">Separation of porch, balcony or other addition from building</span></span></label></div>
+
+				<div class="ui-checkbox"><input name="building-14a" id="building-14a" class="custom" type="checkbox"><label class="ui-btn ui-btn-icon-left ui-btn-up-c" data-theme="c" for="building-14a"><span class="ui-btn-inner"><span class="ui-btn-text">Building permenantly shifted over foundation</span></span></label></div>
+				
+		    </div></fieldset>
+			</div>
+
+			<div class="ui-field-contain ui-body ui-br" data-role="fieldcontain">
+	         <label class="ui-input-text" for="name">Structure description (Please indicate the general type of structure you were in at the time of the earthquake and your approximate location withing the structure. (eg. wood, brick, etc... basement, penthouse, etc...)):</label>
+	         <input class="ui-input-text ui-body-null ui-corner-all ui-shadow-inset ui-body-c" name="name" id="name" value="" type="text">
+			</div>
+			<div class="ui-field-contain ui-body ui-br" data-role="fieldcontain">
+	         <label class="ui-input-text" for="name">Name (doesn't have to be real):</label>
+	         <input class="ui-input-text ui-body-null ui-corner-all ui-shadow-inset ui-body-c" name="name" id="name" value="" type="text">
+			</div>
+
+			<div class="ui-field-contain ui-body ui-br" data-role="fieldcontain">
+			<label class="ui-input-text" for="textarea">Additional comments:</label>
+			<textarea class="ui-input-text ui-body-null ui-corner-all ui-shadow-inset ui-body-c" cols="40" rows="8" name="textarea" id="textarea"></textarea>
+			</div>
+
+<p>You may use this box to clarify answers or to make observations that are not accommodated by other questions. You may also give first-person descriptions of how the earthquake affected you. USGS scientists may use some of the information that you enter in qualitative descriptions of shaking or damage in USGS publications. You would be identified as “an observer” and your location would be given in general terms. Parts of some first-person accounts may be reproduced as quotations in USGS publications.</p>
+
+	</form>
+
+	</div></div></div></body>​​​​​</html>

@@ -63,10 +63,12 @@
    <div data-role="page" id="bar">
 
 	<div data-role="header">
-		<h1>Bar</h1>
+		<h1>QuakeFelt</h1>
 	</div><!-- /header -->
 
 	<div data-role="content">	
+		
+		
 		<ul data-role="listview" id="recent-quakes">
 			
 		</ul>
@@ -106,27 +108,37 @@
 					lng = coords.longitude,
 					list = $("#recent-quakes"),
 					point, point2,
-					point1 = new LatLon(lat, lng);
+					point1 = new LatLon(lat, lng),
+					noquake = true;
 
 				
 				// Build list of event sbased on RSS feed data, converted to JSON through YQL
 				$.getJSON("http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20rss%20where%20url%3D'http%3A%2F%2Fwww.ga.gov.au%2Fearthquakes%2Fall_recent.rss'&format=json&callback=?",function(data) {
+				//$.getJSON("http://quakefelt.local/quakes.json",function(data) {
+					// Clear list
+					list.html("");
+					
 					$.each(data.query.results.item,function(index,key) {
 						point = key.point.split(" ");
 						point2 = new LatLon(point[0], point[1]);
 						
-						console.log(key.title + ": " + point1.distanceTo(point2) + "km");
-						
 						// Find any quakes within 400km of your location
 						if(point1.distanceTo(point2) <= distanceThreshhold) {
-							list.append(["<li><a href='#'>",
+							noquake = false;
+							
+							list.append(["<li><a href='form.html'>",
 								"<h3>"+key.title+"</h3>",
 								"<p>"+key.description+"</p>",
 							"</a></li>"].join(''));
-						} else {
-							// No quakes within a 40km distance
 						}
 					});
+					
+					if(noquake) {
+						// No quakes within a 400km distance
+						list.append(["<li>",
+							"<h3>No quakes have been recorded in your area</h3>",
+						"</li>"].join(''));
+					}
 					
 					// Hide loader
 					$.mobile.pageLoading(true);
@@ -135,9 +147,7 @@
 				});
 			}
 			function error(err) {
-				var postcode = prompt("Something went wrong, enter your postcode:");
 				
-				alert("thanks for your postcode" + postcode);
 			}
 		}
 		
@@ -146,28 +156,11 @@
 	})( this, this.document );
    </script>
   
+  <!-- jQuery Mobile -->
+  <script src="js/libs/jquery.mobile-1.0a4.1.min.js"></script>
+  
   <!-- Haversine forumla -->
   <script src="js/libs/latlon.js">/* Latitude/Longitude formulae */</script>
-
-  
-  <!-- Google Maps API -->
-  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>
-  <script src="js/libs/jquery.mobile-1.0a4.1.min.js"></script>
-
-  <!-- scripts concatenated and minified via ant build script -->
-  <script src="js/mylibs/helper.js"></script>
-  <!-- end concatenated and minified scripts-->
-  
-  <!-- Debugger - remove for production -->
-  <!-- <script src="https://getfirebug.com/firebug-lite.js"></script> -->
-  
-  <!-- mathiasbynens.be/notes/async-analytics-snippet Change UA-XXXXX-X to be your site's ID
-  <script>
-    var _gaq=[["_setAccount","UA-XXXXX-X"],["_trackPageview"]];
-    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
-    g.src=("https:"==location.protocol?"//ssl":"//www")+".google-analytics.com/ga.js";
-    s.parentNode.insertBefore(g,s)}(document,"script"));
-  </script> -->
 
 </body>
 </html>
