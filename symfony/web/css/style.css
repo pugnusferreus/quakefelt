@@ -214,7 +214,7 @@ textarea.contenteditable {-webkit-appearance: none;}
 */
 
 #foo{
-	background:#e1dbd4 url(../images/bg.jpg) repeat;
+	background:#e1dbd4 url(/images/bg.jpg) repeat;
 }
 
 #oldHeader{
@@ -249,7 +249,7 @@ textarea.contenteditable {-webkit-appearance: none;}
 	height:101px;
 	margin:0 auto;
 	text-indent:-999px;
-	background:url(../images/logo.png) no-repeat;
+	background:url(/images/logo.png) no-repeat;
 }
 
 .strong{

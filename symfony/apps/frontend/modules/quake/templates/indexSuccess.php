@@ -1,3 +1,4 @@
+<div id="home">  
   <div data-role="page" id="foo"> 
 	<div id="homeHeader">
 		<h1>QuakeFelt</h1>
@@ -23,3 +24,4 @@
 		</ul>
 	</div><!-- /content -->
    </div><!-- /page -->
+</div>

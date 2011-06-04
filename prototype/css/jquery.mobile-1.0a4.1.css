@@ -189,7 +189,7 @@
 .ui-body-c .ui-link{
       color:#2489ce;
       font-weight:bold}
-/*.ui-btn-up-c{
+.ui-btn-up-c{
       border:1px solid #ccc;
       background:#eee;
       font-weight:bold;
@@ -224,7 +224,7 @@
       color:#2f3e46}
 .ui-btn-up-c,.ui-btn-hover-c,.ui-btn-down-c{
       font-family:Helvetica,Arial,sans-serif;
-      text-decoration:none}*/
+      text-decoration:none}
 .ui-bar-d{
       border:1px solid #ccc;
       background:#bbb;
@@ -252,7 +252,7 @@
 .ui-body-d .ui-link{
       color:#2489ce;
       font-weight:bold}
-/*.ui-btn-up-d{
+.ui-btn-up-d{
       border:1px solid #ccc;
       background:#fff;
       font-weight:bold;
@@ -292,7 +292,7 @@
       -ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorStr='#cccccc', EndColorStr='#eeeeee')"}
 .ui-btn-up-d,.ui-btn-hover-d,.ui-btn-down-d{
       font-family:Helvetica,Arial,sans-serif;
-      text-decoration:none}*/
+      text-decoration:none}
 .ui-bar-e{
       border:1px solid #f7c942;
       background:#fadb4e;
@@ -323,7 +323,7 @@
 .ui-body-e .ui-link{
       color:#2489ce;
       font-weight:bold}
-/*.ui-btn-up-e{
+.ui-btn-up-e{
       border:1px solid #f7c942;
       background:#fadb4e;
       font-weight:bold;
@@ -358,7 +358,7 @@
       color:#333}
 .ui-btn-up-e,.ui-btn-hover-e,.ui-btn-down-e{
       font-family:Helvetica,Arial,sans-serif;
-      text-decoration:none}*/
+      text-decoration:none}
 a.ui-link-inherit{
       text-decoration:none!important}
 .ui-btn-active{
@@ -1028,7 +1028,7 @@ to{
       height:100%;
       text-overflow:ellipsis;
       overflow:hidden;
-      /*white-space:nowrap;*/
+      white-space:nowrap;
       position:relative}
 .ui-header .ui-btn-inner,.ui-footer .ui-btn-inner,.ui-bar .ui-btn-inner{
       padding:.4em 8px .5em}
