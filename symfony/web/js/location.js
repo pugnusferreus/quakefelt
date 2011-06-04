@@ -2,7 +2,7 @@
 	
 	var location = doc.getElementById("getLocation"),
 		body = doc.body,
-		distanceThreshhold = 4000;
+		distanceThreshhold = 400;
 	
 	/* Geolocation */
 	function getLocation() {
