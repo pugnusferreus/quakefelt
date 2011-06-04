@@ -24,9 +24,12 @@ class quakeActions extends sfActions
   {
     sfConfig::set('sf_web_debug', false);
     
-    $quakes = EarthquakeTable::getInstance()->findAll(Doctrine::HYDRATE_ARRAY);
+    $quakes = EarthquakeTable::getInstance()->createQuery('quakes')
+              ->addSelect('quakes.*, COUNT(reports.id) as report_count')
+              ->leftJoin('quakes.Reports reports')
+              ->execute(array(), Doctrine::HYDRATE_ARRAY);
     
-    $this->getResponse()->setContentType('application/json');
+    //$this->getResponse()->setContentType('application/json');
     return $this->renderText(json_encode($quakes));
   }
   
@@ -34,9 +37,12 @@ class quakeActions extends sfActions
   {
     sfConfig::set('sf_web_debug', false);
 
-    $reports = ReportTable::getInstance()->findByEarthquakeId($request->getParameter('id'), Doctrine::HYDRATE_ARRAY);
+    $reports = ReportTable::getInstance()->createQuery('reports')
+              ->innerJoin('reports.Damages damages')
+              ->where('reports.earthquake_id = ?', $request->getParameter('id'))
+              ->execute(array(), Doctrine::HYDRATE_ARRAY);
 
-    $this->getResponse()->setContentType('application/json');
+    //$this->getResponse()->setContentType('application/json');
     return $this->renderText(json_encode($reports));
   }
 }
