@@ -25,9 +25,15 @@ class quakeActions extends sfActions
     sfConfig::set('sf_web_debug', false);
     
     $quakes = EarthquakeTable::getInstance()->createQuery('quakes')
-              ->addSelect('quakes.*, COUNT(reports.id) as report_count')
+              ->addSelect('quakes.*, reports.id')
               ->leftJoin('quakes.Reports reports')
               ->execute(array(), Doctrine::HYDRATE_ARRAY);
+    
+    foreach($quakes as &$quake)
+    {
+      $quake['report_count'] = count($quake['Reports']);
+      unset($quake['Reports']);
+    }
     
     //$this->getResponse()->setContentType('application/json');
     return $this->renderText(json_encode($quakes));
