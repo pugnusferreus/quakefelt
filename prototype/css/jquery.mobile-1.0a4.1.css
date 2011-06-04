@@ -1028,7 +1028,7 @@ to{
       height:100%;
       text-overflow:ellipsis;
       overflow:hidden;
-      white-space:nowrap;
+      /*white-space:nowrap;*/
       position:relative}
 .ui-header .ui-btn-inner,.ui-footer .ui-btn-inner,.ui-bar .ui-btn-inner{
       padding:.4em 8px .5em}
