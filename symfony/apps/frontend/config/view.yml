@@ -17,7 +17,7 @@ default:
                   - style.css?v=1
 
   javascripts:    
-                  - script.js
+                  #- script.js
                   - location.js
                   - libs/latlon.js
 
