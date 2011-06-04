@@ -1,19 +1,21 @@
-  <div data-role="page" data-theme="b" id="foo"> 
-	<div  data-role="header">
+  <div data-role="page" id="foo"> 
+	<div id="homeHeader">
 		<h1>QuakeFelt</h1>
-	</div> 
+	</div>
 	<div data-role="content">
-		<p>If you've experienced an earth quake recently please help us by filling out the form</p>
-		<button data-icon="arrow-r" data-theme="a" data-role="button" data-transition="slide" id="getLocation">Start</button> 
+		<h2>A site for reporting recent earthquakes. </h2>
+		<p>This information will assist disaster response teams, researchers and communities by providing real-time crowd-sourced earthquake intensity data.</p>
+		<p class="strong">Share your experiences and read about others.</p>
+		<button data-theme="a" data-role="button" data-transition="slide" id="getLocation">Begin</button> 
 	</div> 
    </div>
    
    <!-- Start of second page -->
    <div data-role="page" id="bar">
 
-	<div data-role="header">
-		<h1>Bar</h1>
-	</div><!-- /header -->
+	<div id="homeHeader">
+		<h1>QuakeFelt</h1>
+	</div>
 
 	<div data-role="content">	
 		<ul data-role="listview" id="recent-quakes">

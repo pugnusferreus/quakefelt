@@ -37,7 +37,7 @@
 	<!-- more tags for your 'head' to consider https://gist.github.com/849231 -->
   
   <!-- jQuery Mobile -->
-  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.css" />
+  <link rel="stylesheet" href="css/jquery.mobile-1.0a4.1.css" />
 
   
   <!-- Main Stylesheet -->
@@ -47,22 +47,27 @@
   <script src="js/libs/modernizr-custom.js"></script>
 </head>
 
-<body>
+<body id="home">
 
-  <div data-role="page" data-theme="b" id="foo"> 
-	<div  data-role="header">
-		<h1>QuakeFelt</h1>
+  <div data-role="page" id="foo"> 
+	<div data-role="header" id="oldHeader">
+		
 	</div> 
+	<div id="homeHeader">
+		<h1>QuakeFelt</h1>
+	</div>
 	<div data-role="content">
-		<p>If you've experienced an earth quake recently please help us by filling out the form</p>
-		<button data-icon="arrow-r" data-theme="a" data-role="button" data-transition="slide" id="getLocation">Start</button> 
+		<h2>A site for reporting recent earthquakes. </h2>
+		<p>This information will assist disaster response teams, researchers and communities by providing real-time crowd-sourced earthquake intensity data.</p>
+		<p class="strong">Share your experiences and read about others.</p>
+		<button data-theme="a" data-role="button" data-transition="slide" id="getLocation">Begin</button> 
 	</div> 
    </div>
    
    <!-- Start of second page -->
    <div data-role="page" id="bar">
 
-	<div data-role="header">
+	<div data-role="header" data-backbtn="false">
 		<h1>QuakeFelt</h1>
 	</div><!-- /header -->
 
