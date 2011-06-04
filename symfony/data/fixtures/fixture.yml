@@ -1,6 +1,6 @@
 Earthquake:
   record_0:
-    id: 3053692
+    id: 3053193
     magnitude: 5.3
     link: http://www.ga.gov.au/earthquakes/getQuakeDetails.do?quakeId=3053692&orid=426222&sta=N/A
     description: Nicobar Islands, India Region.
@@ -9,7 +9,7 @@ Earthquake:
     time_of_quake: "2011-06-03 07:27:15"
     depth: 100
   record_1:
-    id: 3053372
+    id: 3053192
     magnitude: 5.1
     link: http://www.ga.gov.au/earthquakes/getQuakeDetails.do?quakeId=3053372&orid=426182&sta=ARMA
     description: Loyalty Islands.
