@@ -23,7 +23,7 @@
 				list = $("#recent-quakes"),
 				point, point2,
 				point1 = new LatLon(lat, lng),
-				noquake = true;
+				noquake = true, distance;
 
 			
 			// Build list of event sbased on RSS feed data, converted to JSON through YQL
@@ -35,14 +35,16 @@
 				$.each(data.query.results.item,function(index,key) {
 					point = key.point.split(" ");
 					point2 = new LatLon(point[0], point[1]);
+					distance = point1.distanceTo(point2);
 					
 					// Find any quakes within 400km of your location
-					if(point1.distanceTo(point2) <= distanceThreshhold) {
+					if(distance <= distanceThreshhold) {
 						noquake = false;
 						
 						list.append(["<li><a href='form.html'>",
+							"<div class='intensity'>4.4</div>",
 							"<h3>"+key.title+"</h3>",
-							"<p>"+key.description+"</p>",
+							"<p>"+distance+"km away, 1.33 hrs ago<br />12 Existing reports</p>",
 						"</a></li>"].join(''));
 					}
 				});
