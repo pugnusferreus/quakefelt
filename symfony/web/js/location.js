@@ -1,6 +1,9 @@
+var QS = QS || {};
+
 (function( win, doc ) {
 	
-	var location = doc.getElementById("getLocation"),
+	var location = $("#getLocation"),
+		list = $("#recent-quakes"),
 		body = doc.body,
 		distanceThreshhold = 400;
 	
@@ -20,7 +23,6 @@
 			var coords = pos.coords,
 				lat = coords.latitude,
 				lng = coords.longitude,
-				list = $("#recent-quakes"),
 				point1 = new LatLon(lat, lng), point2,
 				noquake = true, distance, quakeDate, dateNow = Date.now(),
 				dateDiff, hourMS = 3600000;
@@ -42,7 +44,7 @@
 					if(distance <= distanceThreshhold) {
 						noquake = false;
 						
-						list.append(["<li><a href='form.html'>",
+						list.append(["<li><a href='map.html?qid="+key.id+"' rel='external'>",
 							"<div class='intensity'>"+key.magnitude+"</div>",
 							"<h3>"+key.description+"</h3>",
 							"<p>"+distance+"km away, "+dateDiff+" hrs ago<br />"+key.report_count+" Existing reports</p>",
@@ -68,6 +70,28 @@
 		}
 	}
 	
-	$(location).bind("click", getLocation);
+	function queryString(param){
+	
+		var req = win.location, qs = req.search;
+			
+		qs = qs.replace(/^\?/,"");
+		
+		var parameters = qs.split("&"),
+			values, len = parameters.length, obj = {};
+		
+		while(len--) {
+			values = parameters[len].split("=");
+			obj[values[0]] = (values[1]) ? values[1] : values[0];
+		}
+		
+		return obj[param];
+	}
+	
+	window["QS"] = {
+		queryString: queryString,
+		getLocation: getLocation
+	}
+	
+	location.bind("click", getLocation);
 
 })( this, this.document );
