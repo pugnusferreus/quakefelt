@@ -19,4 +19,14 @@ class quakeActions extends sfActions
   {
     
   }
+  
+  public function executeApiList(sfWebRequest $request)
+  {
+    sfConfig::set('sf_web_debug', false);
+    
+    $quakes = EarthquakeTable::getInstance()->findAll(Doctrine::HYDRATE_ARRAY);
+    
+    $this->getResponse()->setContentType('application/json');
+    return $this->renderText(json_encode($quakes));
+  }
 }

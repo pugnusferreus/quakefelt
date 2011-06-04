@@ -5,6 +5,12 @@
 homepage:
   url:   /
   param: { module: quake, action: index }
+  
+quake_list:
+  url: /quakes.:sf_format
+  params: { module: quake, action: apiList }
+  requirements:
+    sf_format: json
 
 # generic rules
 # please, remove them by adding more specific rules
