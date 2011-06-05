@@ -20,7 +20,7 @@
 				<a href="" class="c-button ui-corner-all">Report a Quake</a>
 			</div>
 		</div>
-		<div id="mapcontainer" style="width:320px;height:300px"></div>
+		<div id="mapcontainer" style="width:100%;height:100%"></div>
 		<div id="markerdata" style="width:100%;height:100%"></div>
 	</div> 
   </div>
