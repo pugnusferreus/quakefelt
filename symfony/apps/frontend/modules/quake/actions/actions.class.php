@@ -17,38 +17,48 @@ class quakeActions extends sfActions
   */
   public function executeIndex(sfWebRequest $request)
   {
-    
+
   }
-  
+
   public function executeMap(sfWebRequest $request)
   {
     sfConfig::set('sf_web_debug', false);
 
-    $reports = EarthquakeTable::getInstance()->createQuery('earthquake')
+    $this->quake = EarthquakeTable::getInstance()->createQuery('earthquake')
               ->innerJoin('earthquake.Reports reports')
               ->where('earthquake.id = ?', $request->getParameter('id'))
               ->execute(array(), Doctrine::HYDRATE_ARRAY);
   }
-  
+
+  public function executeShare(sfWebRequest $request)
+  {
+    sfConfig::set('sf_web_debug', false);
+
+    $this->quake = EarthquakeTable::getInstance()->createQuery('earthquake')
+              ->innerJoin('earthquake.Reports reports')
+              ->where('earthquake.id = ?', $request->getParameter('id'))
+              ->execute(array(), Doctrine::HYDRATE_ARRAY);
+  }
+
   public function executeApiList(sfWebRequest $request)
   {
     sfConfig::set('sf_web_debug', false);
-    
+
     $quakes = EarthquakeTable::getInstance()->createQuery('quakes')
               ->addSelect('quakes.*, reports.id')
               ->leftJoin('quakes.Reports reports')
               ->execute(array(), Doctrine::HYDRATE_ARRAY);
-    
+
     foreach($quakes as &$quake)
     {
       $quake['report_count'] = count($quake['Reports']);
       unset($quake['Reports']);
     }
-    
+
     //$this->getResponse()->setContentType('application/json');
     return $this->renderText(json_encode($quakes));
   }
-  
+
   public function executeApiQuakeReports(sfWebRequest $request)
   {
     sfConfig::set('sf_web_debug', false);
