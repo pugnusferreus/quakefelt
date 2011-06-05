@@ -27,7 +27,7 @@ class quakeActions extends sfActions
     $this->quake = EarthquakeTable::getInstance()->createQuery('earthquake')
               ->innerJoin('earthquake.Reports reports')
               ->where('earthquake.id = ?', $request->getParameter('id'))
-              ->execute(array(), Doctrine::HYDRATE_ARRAY);
+              ->fetchOne(array(), Doctrine::HYDRATE_ARRAY);
   }
 
   public function executeShare(sfWebRequest $request)
@@ -37,7 +37,7 @@ class quakeActions extends sfActions
     $this->quake = EarthquakeTable::getInstance()->createQuery('earthquake')
               ->innerJoin('earthquake.Reports reports')
               ->where('earthquake.id = ?', $request->getParameter('id'))
-              ->execute(array(), Doctrine::HYDRATE_ARRAY);
+              ->fetchOne(array(), Doctrine::HYDRATE_ARRAY);
   }
 
   public function executeApiList(sfWebRequest $request)

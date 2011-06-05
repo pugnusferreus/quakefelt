@@ -10,6 +10,10 @@ quake_map:
   url: /quake/:id/map
   params: { module: quake, action: map }
 
+quake_share:
+  url: /quake/:id/share
+  params: { module: quake, action: share }
+
 quake_list_api:
   url: /quakes.:sf_format
   params: { module: quake, action: apiList }
