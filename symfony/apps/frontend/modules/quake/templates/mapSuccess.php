@@ -6,7 +6,7 @@
 		<div class="richter">4.4</div>
 		<div class="event">
 			<span class="locn">Dandenong</span>
-			<span class="detail">1.4 km away, 1:33 h ago, 12 reports</span>
+			<span class="detail">1.4 km away, 1:33 h ago</span>
 		</div>
 		<a href="#" class="home-button">home</a>
 	</div> 
@@ -20,7 +20,7 @@
 				<a href="" class="c-button ui-corner-all">Report a Quake</a>
 			</div>
 		</div>
-		<div id="mapcontainer" style="width:100%;height:300px"></div>
+		<div id="mapcontainer" style="width:320px;height:300px"></div>
 		<div id="markerdata" style="width:100%;height:100%"></div>
 	</div> 
   </div>
