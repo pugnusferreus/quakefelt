@@ -17,7 +17,7 @@
 				<a href="" class="c-button grey ui-corner-all hidden">Map</a>
 			</div>
 			<div id="startForm">
-				<a href="" class="c-button ui-corner-all">Share Information</a>
+				<a href="" class="c-button ui-corner-all">Report a Quake</a>
 			</div>
 		</div>
 		<div id="mapcontainer" style="width:100%;height:300px"></div>
