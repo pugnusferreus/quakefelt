@@ -1,4 +1,4 @@
-﻿/**
+/**
  * HTML5 ✰ Boilerplate
  *
  * style.css contains a reset, font normalization and some base styles.
@@ -16,6 +16,9 @@
  * v1.6.1 2010-09-17 | Authors: Eric Meyer & Richard Clark
  * html5doctor.com/html-5-reset-stylesheet/
  */
+
+@import url("kai.css");
+
 
 html, body, div, span, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -214,7 +217,7 @@ textarea.contenteditable {-webkit-appearance: none;}
 */
 
 #foo{
-	background:#e1dbd4 url(/images/bg.jpg) repeat;
+	background:#e1dbd4 url(../img/bg.jpg) repeat;
 }
 
 #oldHeader{
@@ -223,19 +226,19 @@ textarea.contenteditable {-webkit-appearance: none;}
 
 #home h2{
 	color:#81786d;
-	font-size:20px;
+	font-size:18px;
 	text-align:center;
-	margin:20px;
+	margin:15px;
 }
 
 #home p{
 	color:#81786d;
 	font-size:16px;
 	text-align:center;
-	margin:20px;
+	margin:15px;
 }
 
-#homeHeader{
+#homeHeader, .brownBar{
 	background-color:#484238;
 	background: -moz-linear-gradient(0% 100% 90deg,#484238, #726A5D);
 	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#484238), to(#726A5D));
@@ -244,17 +247,112 @@ textarea.contenteditable {-webkit-appearance: none;}
 	padding:13px 0;
 }
 
+div.brownBar{
+	padding:0;
+	height:55px;
+	font-size:20px;
+	font-weight:bold;
+	color:#90877d;
+	text-shadow:none;
+}
+
+.richter, .event{
+	height:39px;
+	float:left;
+	padding:8px 12px;
+}
+
+.event{
+	width:200px;
+}
+
+.locn{
+	color:#fff;
+}
+.detail{
+	font-size:12px;
+	display:block;
+	font-weight:bormal;
+}
+
+.richter{
+	border-right:1px solid #464138;
+	background: url(../img/quake.png) center 30px no-repeat;
+}
+
+.event{
+	border-left:1px solid #676257;
+}
+
+a.home-button{
+	display:block;
+	float:right;
+	margin-right:12px;
+	width:36px;
+	height:36px;
+	margin-top:9px;
+	text-indent:-9999px;
+	background:url(../img/home.png) no-repeat;
+}
+
 #homeHeader h1{
 	width:249px;
 	height:101px;
 	margin:0 auto;
 	text-indent:-999px;
-	background:url(/images/logo.png) no-repeat;
+	background:url(../img/logo.png) no-repeat;
 }
 
 .strong{
 	font-weight:bold;
 }
+
+[data-role="header"] {
+    display:none;
+}
+
+#toggleView{
+	width:100px; 
+	margin-left:15px;
+	float:left;
+}
+
+#startForm{
+	width:180px;
+	margin-right:15px;
+	float:right;
+	
+}
+
+.c-button {
+	display:block;
+	width:100%;
+	padding:10px;
+	border:2px solid #c7370b;
+    background:#f6450f;
+    font-weight:bold;
+    color:#fff;
+	text-decoration:none;
+	text-shadow:none;
+	text-align:center;
+	font-size:16px;
+}
+
+.c-button.grey{
+	border:2px solid #a19991;
+    background:#dad5ca;
+	color:#484238;
+}
+
+#button-row #startForm .ui-btn .ui-btn-text, #button-row #toggleView .ui-btn .ui-btn-text{
+	text-size:12px;
+}
+
+.hidden{
+	display:none;
+}
+
+
 /*
 button{
 	border:2px solid #c7370b;
@@ -290,3 +388,4 @@ only screen and (-o-min-device-pixel-ratio: 3/2),
 only screen and (min-device-pixel-ratio: 1.5) {
   /* Styles */
 }
+

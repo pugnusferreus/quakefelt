@@ -28,7 +28,6 @@ var QS = QS || {};
 
 			
 			// Build list of event sbased on RSS feed data, converted to JSON through YQL
-			//$.getJSON("http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20rss%20where%20url%3D'http%3A%2F%2Fwww.ga.gov.au%2Fearthquakes%2Fall_recent.rss'&format=json&callback=?",function(data) {
 			$.getJSON("quakes.json",function(data) {
 				// Clear list
 				list.html("");
