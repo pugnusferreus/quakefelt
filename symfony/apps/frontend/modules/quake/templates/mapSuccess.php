@@ -22,6 +22,7 @@
 		</div>
 		<div id="mapcontainer" style="width:320px;height:300px"></div>
 		<div id="markerdata" style="width:100%;height:100%"></div>
+		<div id="markerlegend" style="position:absolute;left:40px;top:300px;width:295px;height:30px;background-image: url('/images/map/marker_legend.png')"></div>
 	</div> 
   </div>
   

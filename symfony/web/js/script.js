@@ -10,6 +10,9 @@ Maps = (function($, window) {
 	/** google maps object */
 	var map,
 
+	/** Google Maps geocoder */
+		geocoder,
+
 	/** Array of markers */
 		markers = [],
 
@@ -30,6 +33,29 @@ Maps = (function($, window) {
 		  zoom: 3,
 		  center: new google.maps.LatLng(defaultLat, defaultLong),
 		  mapTypeId: google.maps.MapTypeId.ROADMAP
+		},
+
+	/** MarkerIcon used for quake epicenter */
+		quakeIcon = new google.maps.MarkerImage('/images/map/marker_quake.png'),
+
+	/** URL to load marker sheet from */
+		markerSheetUrl = "/images/map/marker_sheet.png",
+
+	/** Size of marker sheet sprites */
+		markerSheetSize = new google.maps.Size(32, 38),
+
+	/** Map of MarkerIcon used for MMI values */
+		intensityIcons = {	
+			1: new google.maps.MarkerImage(markerSheetUrl, markerSheetSize, new google.maps.Point(0,0)),
+			2: new google.maps.MarkerImage(markerSheetUrl, markerSheetSize, new google.maps.Point(32,0)),
+			3: new google.maps.MarkerImage(markerSheetUrl, markerSheetSize, new google.maps.Point(32,0)),
+			4: new google.maps.MarkerImage(markerSheetUrl, markerSheetSize, new google.maps.Point(64,0)),
+			5: new google.maps.MarkerImage(markerSheetUrl, markerSheetSize, new google.maps.Point(96,0)),
+			6: new google.maps.MarkerImage(markerSheetUrl, markerSheetSize, new google.maps.Point(128,0)),
+			7: new google.maps.MarkerImage(markerSheetUrl, markerSheetSize, new google.maps.Point(160,0)),
+			8: new google.maps.MarkerImage(markerSheetUrl, markerSheetSize, new google.maps.Point(192,0)),
+			9: new google.maps.MarkerImage(markerSheetUrl, markerSheetSize, new google.maps.Point(224,0)),
+			10: new google.maps.MarkerImage(markerSheetUrl, markerSheetSize, new google.maps.Point(256,0)),
 		};
 
 	/**
@@ -52,13 +78,24 @@ Maps = (function($, window) {
 	/**
 	 * @return marker Marker object
 	 */
-	function _getMarker(lat, lng, title) {
+	function _getMarker(lat, lng, title, icon) {
 		var marker = new google.maps.Marker({
 			position: new google.maps.LatLng(lat, lng),
 			title: title || '',
-			animation: google.maps.Animation.DROP
+			animation: google.maps.Animation.DROP,
+			icon: icon
 		});
 		return marker;
+	}
+
+	/**
+	 * @return google.maps.Geocoder
+	 */
+	function _getGeocoder() {
+		if (!geocoder) {
+			geocoder = new google.maps.Geocoder;
+		}
+		return geocoder;
 	}
 	
 
@@ -85,6 +122,7 @@ Maps = (function($, window) {
 			var canvas = $('#' + id),
 				opts = _getmapOpts(lat, lng, zoom);
 			map = new google.maps.Map(canvas[0], opts);
+			Maps.setCenter(lat, lng);
 		},
 
 		/**
@@ -116,9 +154,13 @@ Maps = (function($, window) {
 		 * @param lat Latitude of the marker
 		 * @param long Longitude of the marker
 		 * @param title String title for the marker, can be empty
+		 * @param mmi MMI value the associated with the report marker
 		 */
-		addMarker : function maps_addmarker(lat, lng, title) {
-			var marker = _getMarker(lat, lng, title);
+		addMarker : function maps_addmarker(lat, lng, title, mmi) {
+			
+			// get marker icon
+			var icon = intensityIcons[Math.round(mmi)];
+			var marker = _getMarker(lat, lng, title, icon);
 			// To add the marker to the map, call setMap();
 			if (map == undefined) {
 				return;
@@ -138,6 +180,21 @@ Maps = (function($, window) {
 		},
 
 		/**
+		 * Add a marker for the quake epicenter. This marker is not clickable.
+		 * The quake marker should be added before user markers.
+		 */
+		addQuakeMarker: function maps_addQuakeMarker(lat, lng, title) {
+			var marker = _getMarker(lat, lng, title, quakeIcon);
+			if (!map) {
+				return;
+			}
+			
+			marker.setAnimation(null); 	// do not animate quake marker
+			marker.setZIndex(-999); 	// place behind all other markers
+			marker.setMap(map);
+		},
+
+		/**
 		 * Clear the markers array from the current map.
 		 */
 		clearMarkers: function maps_clearMarkers() {
@@ -153,6 +210,29 @@ Maps = (function($, window) {
 		 */
 		setMarkerEventHandler: function maps_addMarkerEventHandler(callback) {
 			markerEventHandler = callback;
+		},
+
+		/**
+		 * Geocode a postcode using the Google Maps API
+		 * If successful, set the map center to the returned latlng location.
+		 */
+		geocode: function maps_geocode(postcode) {
+			_getGeocoder().geocode( { 'address': postcode.toString(), region: 'au'}, function(results, status) {
+		      if (status == google.maps.GeocoderStatus.OK) {
+		      	
+		      	var lat = results[0].geometry.location.lat(),
+		      		lng = results[0].geometry.location.lng();
+
+		      	if (!map) {
+		      		Maps.loadMap("mapcontainer", lat, lng, 10);
+		      	}
+
+		        Maps.setCenter(lat, lng);
+		        
+		      } else {
+		        console.log("Geocode was not successful for the following reason: " + status);
+		      }
+			});
 		}
 		
 	};
@@ -168,6 +248,7 @@ $(window).load(function() {
 	
 	// load a map in using quake data
 	Maps.loadMap("mapcontainer", -37.490, 142.425, 9);
+	Maps.addQuakeMarker(-37.490, 142.425);
 
 	Maps.setMarkerEventHandler(function(marker){
 		// load the data for this marker
@@ -196,7 +277,7 @@ $(window).load(function() {
 	$.getJSON("quake/"+qid+"/reports.json",function(data){
 		$.each(data,function(index,key){
 			hash[key.id] = key;	
-			Maps.addMarker(key.latitude, key.longitude, ""+key.id);
+			Maps.addMarker(key.latitude, key.longitude, ""+key.id, key.mmi);
 		});
 	});
 
