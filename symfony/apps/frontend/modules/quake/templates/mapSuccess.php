@@ -20,7 +20,7 @@
 				<a href="<?php echo url_for('@report_new?earthquake_id=' . $quake['id']) ?>" class="c-button ui-corner-all">Report a Quake</a>
 			</div>
 		</div>
-		<div id="mapcontainer" style="width:100%;height:100%"></div>
+		<div id="mapcontainer" style="width:100%;height:300px"></div>
 		<div id="markerdata" style="width:100%;height:100%"></div>
 	</div>
   </div>
