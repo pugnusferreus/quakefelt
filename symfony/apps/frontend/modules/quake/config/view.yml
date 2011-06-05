@@ -1,12 +1,11 @@
 
 indexSuccess:
   stylesheets:
-                -
   javascripts:
                 - location.js
 
 mapSuccess:
   stylesheets:
-                -
   javascripts:
+                - script.js
                 - location.js
