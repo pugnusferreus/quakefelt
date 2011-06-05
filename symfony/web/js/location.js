@@ -99,48 +99,5 @@ var QS = QS || {};
 	}
 	
 	location.bind("click", getLocation);
-	
-	// Map points
-	$(window).load(function() {
-		
-		// get quake data
-		var qid = QS.queryString('qid'),
-			hash = {};
-		
-		// load a map in using quake data
-		Maps.loadMap("mapcontainer", -37.490, 142.425, 9);
-
-		Maps.setMarkerEventHandler(function(marker){
-			// load the data for this marker
-			var report = hash[marker.title],
-				days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-
-			
-			//On Monday I felt/was woken by/slept through (asleep) a quake while inside/outside (physical situation). In Melbourne at 20 (distance to epicentre) km from the epicentre. The shaking was violent (strength) and I felt frightened (emotions). I hid under a table (action) during the 30 seconds (time) of shaking. Personal notes: This is a little story I can add to my report. Maxium of x characters would be good.
-			$("#quake-report").html([
-				"<h2>"+report.reporter_name+"</h2>",
-				"<p>",
-					"On ",
-					days[new Date(report.created_at.replace(/\-/g,"/")).getDay()],
-					" while " + report.situation.toLowerCase(),
-					" and " +  report.distance_from_epicentre + "km from the epicentre. ",
-					"The shaking was " + report.motion.toLowerCase() + " and I felt " + report.reaction.replace(/\_/g," ").toLowerCase() + ". ",
-					"The shaking lasted " + report.duration + " seconds. ",
-					"Personal notes: " + report.d_text, // report.story on real data
-				"</p>"
-			].join(''));
-			
-			$.mobile.changePage("#maplistpage", "slide");
-		});
-
-		// loop other reports and add markers
-		$.getJSON("quake/"+qid+"/reports.json",function(data){
-			$.each(data,function(index,key){
-				hash[key.id] = key;	
-				Maps.addMarker(key.latitude, key.longitude, ""+key.id);
-			});
-		});
-
-	});
 
 })( this, this.document );
