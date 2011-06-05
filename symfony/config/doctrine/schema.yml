@@ -32,6 +32,7 @@ Report:
       notnull: true
       unique: true
       primary: true
+      autoincrement: true
     earthquake_id:
       type: integer
       notnull: true
