@@ -193,7 +193,7 @@ $(window).load(function() {
 	});
 
 	// loop other reports and add markers
-	$.getJSON("quake/"+qid+"/reports.json",function(data){
+	$.getJSON("/quake/"+qid+"/reports.json",function(data){
 		$.each(data,function(index,key){
 			hash[key.id] = key;	
 			Maps.addMarker(key.latitude, key.longitude, ""+key.id);
