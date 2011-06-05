@@ -61,7 +61,6 @@
       padding:0;
 	  font-size:20px;
 	  text-shadow:none;
-	  box-shadow:0 4px 0 #c7370b;
 	  }
 	  
 .ui-btn:focus,.ui-btn:active{
@@ -126,10 +125,10 @@
 .ui-body-b .ui-link{
       color:#2489ce;
       font-weight:bold}
-/*
+
 .ui-btn-up-b{
       border:1px solid #145072;
-      background:#2567ab;
+      background:#dbd5ca;
       font-weight:bold;
       color:#fff;
       text-shadow:0 -1px 1px #145072;
@@ -140,7 +139,7 @@
       color:#fff}
 .ui-btn-hover-b{
       border:1px solid #00516e;
-      background:#4b88b6;
+      background:#dbd5ca;
       font-weight:bold;
       color:#fff;
       text-shadow:0 -1px 1px #014d68;
@@ -151,7 +150,7 @@
       color:#fff}
 .ui-btn-down-b{
       border:1px solid #225377;
-      background:#4e89c5;
+      background:#dbd5ca;
       font-weight:bold;
       color:#fff;
       text-shadow:0 -1px 1px #225377;
@@ -162,11 +161,13 @@
       color:#fff}
 .ui-btn-up-b,.ui-btn-hover-b,.ui-btn-down-b{
       font-family:Helvetica,Arial,sans-serif;
-      text-decoration:none}*/
+      text-decoration:none}
+	  
+	  
+	  
 .ui-bar-c{
       border:1px solid #b3b3b3;
       background:#e9eaeb;
-      color:#3e3e3e;
       font-weight:bold;
       text-shadow:0 1px 1px #fff;
       background-image:-moz-linear-gradient(top,#f0f0f0,#e9eaeb);
@@ -187,9 +188,8 @@
 .ui-body-c .ui-link-inherit{
       color:#333}
 .ui-body-c .ui-link{
-      color:#2489ce;
       font-weight:bold}
-/*.ui-btn-up-c{
+.ui-btn-up-c{
       border:1px solid #ccc;
       background:#eee;
       font-weight:bold;
@@ -204,7 +204,6 @@
       border:1px solid #bbb;
       background:#dadada;
       font-weight:bold;
-      color:#101010;
       text-shadow:0 1px 1px #fff;
       background-image:-moz-linear-gradient(top,#ededed,#dadada);
       background-image:-webkit-gradient(linear,left top,left bottom,color-stop(0,#ededed),color-stop(1,#dadada));
@@ -224,7 +223,7 @@
       color:#2f3e46}
 .ui-btn-up-c,.ui-btn-hover-c,.ui-btn-down-c{
       font-family:Helvetica,Arial,sans-serif;
-      text-decoration:none}*/
+      text-decoration:none}
 .ui-bar-d{
       border:1px solid #ccc;
       background:#bbb;
@@ -252,7 +251,7 @@
 .ui-body-d .ui-link{
       color:#2489ce;
       font-weight:bold}
-/*.ui-btn-up-d{
+.ui-btn-up-d{
       border:1px solid #ccc;
       background:#fff;
       font-weight:bold;
@@ -264,7 +263,6 @@
       border:1px solid #aaa;
       background:#eee;
       font-weight:bold;
-      color:#222;
       cursor:pointer;
       text-shadow:0 1px 1px #fff;
       background-image:-moz-linear-gradient(top,#fdfdfd,#eee);
@@ -292,7 +290,7 @@
       -ms-filter:"progid:DXImageTransform.Microsoft.gradient(startColorStr='#cccccc', EndColorStr='#eeeeee')"}
 .ui-btn-up-d,.ui-btn-hover-d,.ui-btn-down-d{
       font-family:Helvetica,Arial,sans-serif;
-      text-decoration:none}*/
+      text-decoration:none}
 .ui-bar-e{
       border:1px solid #f7c942;
       background:#fadb4e;
@@ -323,7 +321,7 @@
 .ui-body-e .ui-link{
       color:#2489ce;
       font-weight:bold}
-/*.ui-btn-up-e{
+.ui-btn-up-e{
       border:1px solid #f7c942;
       background:#fadb4e;
       font-weight:bold;
@@ -358,7 +356,7 @@
       color:#333}
 .ui-btn-up-e,.ui-btn-hover-e,.ui-btn-down-e{
       font-family:Helvetica,Arial,sans-serif;
-      text-decoration:none}*/
+      text-decoration:none}
 a.ui-link-inherit{
       text-decoration:none!important}
 .ui-btn-active{
@@ -698,8 +696,7 @@ a.ui-link-inherit{
 .ui-content{
       border-width:0;
       overflow:visible;
-      overflow-x:hidden;
-      padding:15px}
+      overflow-x:hidden;}
 .ui-page-fullscreen .ui-content{
       padding:0}
 .ui-icon{
