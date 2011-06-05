@@ -66,7 +66,7 @@ Report:
       type: enum
       values: ['1_SEC','10_SEC','20_SEC','30_SEC','40_SEC','50_SEC','1_MIN','1_30_MIN,'2_MIN','2_30_MIN','3_MIN','3_30_MIN','4_MIN','4_30_MIN','5_MIN']
       notnull: true
-      default: NONE
+      default: 1_SEC
     reaction:
       type: enum
       values: ['NONE','LITTLE','EXCITEMENT','SOMEWHAT_FRIGHTENED','VERY_FRIGHTENED','EXTREMELY_FRIGHTENED']
@@ -76,7 +76,7 @@ Report:
       type: enum
       values: ['NONE','DOORWAY','DUCKED','RAN_OUTSIDE','OTHER']
       notnull: true
-      default: TOOK_NO_ACTION
+      default: NONE
     stand:
       type: boolean
       notnull: true
