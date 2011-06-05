@@ -163,8 +163,8 @@ body, select, input, textarea {
 /* Headers (h1, h2, etc) have no default font-size or margin; define those yourself */
 h1, h2, h3, h4, h5, h6 { font-weight: bold; }
 
-a, a:active, a:visited { color: #607890; }
-a:hover { color: #036; }
+a, a:active, a:visited {}
+a:hover { }
 
 
 /* 
@@ -342,6 +342,10 @@ a.home-button{
 	border:2px solid #a19991;
     background:#dad5ca;
 	color:#484238;
+}
+
+a:hover.button.orange{
+	color:#fff!important;
 }
 
 #button-row #startForm .ui-btn .ui-btn-text, #button-row #toggleView .ui-btn .ui-btn-text{
