@@ -248,6 +248,7 @@ $(window).load(function() {
 	
 	// load a map in using quake data
 	Maps.loadMap("mapcontainer", -37.490, 142.425, 9);
+	Maps.addQuakeMarker(-37.490, 142.425);
 
 	Maps.setMarkerEventHandler(function(marker){
 		// load the data for this marker
@@ -275,8 +276,8 @@ $(window).load(function() {
 	// loop other reports and add markers
 	$.getJSON("/quake/"+qid+"/reports.json",function(data){
 		$.each(data,function(index,key){
-			hash[key.id] = key;	
-			Maps.addMarker(key.latitude, key.longitude, ""+key.id);
+			hash[key.id] = key;
+			Maps.addMarker(key.latitude, key.longitude, ""+key.id, key.mmi);
 		});
 	});
 
