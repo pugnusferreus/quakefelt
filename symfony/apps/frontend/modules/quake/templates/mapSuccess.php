@@ -8,7 +8,7 @@
 			<span class="locn">Dandenong</span>
 			<span class="detail">1.4 km away, 1:33 h ago</span>
 		</div>
-		<a href="#" class="home-button">home</a>
+		<a href="<?php echo url_for('@homepage') ?>" class="home-button">home</a>
 	</div>
 	<div data-role="content">
 <div id="button-row">
