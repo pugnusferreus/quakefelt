@@ -17,7 +17,7 @@ abstract class BaseDamageForm extends BaseFormDoctrine
     $this->setWidgets(array(
       'id'         => new sfWidgetFormInputHidden(),
       'report_id'  => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Report'), 'add_empty' => false)),
-      'damage'     => new sfWidgetFormChoice(array('choices' => array('NONE' => 'NONE', 'HAIRLINE_CRACKS' => 'HAIRLINE_CRACKS', 'CRACKED_WINDOW\'' => 'CRACKED_WINDOW\'', 'SOME_LARGE_WALL_CRACKS' => 'SOME_LARGE_WALL_CRACKS', 'MANY_LARGE_WALL_CRACKS' => 'MANY_LARGE_WALL_CRACKS', 'TILES_FELL' => 'TILES_FELL', 'CHIMNEY_CRACKS' => 'CHIMNEY_CRACKS', 'BROKEN_WINDOWS' => 'BROKEN_WINDOWS', 'MASONRY_FELL' => 'MASONRY_FELL', 'CHIMNEY_FELL' => 'CHIMNEY_FELL', 'WALL_COLLAPSED' => 'WALL_COLLAPSED', 'ADDITION_SEPARATED' => 'ADDITION_SEPARATED', 'BUILDING_MOVED' => 'BUILDING_MOVED'))),
+      'damage'     => new sfWidgetFormChoice(array('choices' => array('NONE' => 'NONE', 'HAIRLINE_CRACKS' => 'HAIRLINE_CRACKS', 'CRACKED_WINDOW' => 'CRACKED_WINDOW', 'SOME_LARGE_WALL_CRACKS' => 'SOME_LARGE_WALL_CRACKS', 'MANY_LARGE_WALL_CRACKS' => 'MANY_LARGE_WALL_CRACKS', 'TILES_FELL' => 'TILES_FELL', 'CHIMNEY_CRACKS' => 'CHIMNEY_CRACKS', 'BROKEN_WINDOWS' => 'BROKEN_WINDOWS', 'MASONRY_FELL' => 'MASONRY_FELL', 'OLD_CHIMNEY_FELL' => 'OLD_CHIMNEY_FELL', 'NEW_CHIMNEY_FELL' => 'NEW_CHIMNEY_FELL', 'WALL_COLLAPSED' => 'WALL_COLLAPSED', 'ADDITION_SEPARATED' => 'ADDITION_SEPARATED', 'BUILDING_MOVED' => 'BUILDING_MOVED'))),
       'created_at' => new sfWidgetFormDateTime(),
       'updated_at' => new sfWidgetFormDateTime(),
     ));
@@ -25,7 +25,7 @@ abstract class BaseDamageForm extends BaseFormDoctrine
     $this->setValidators(array(
       'id'         => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
       'report_id'  => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Report'))),
-      'damage'     => new sfValidatorChoice(array('choices' => array(0 => 'NONE', 1 => 'HAIRLINE_CRACKS', 2 => 'CRACKED_WINDOW\'', 3 => 'SOME_LARGE_WALL_CRACKS', 4 => 'MANY_LARGE_WALL_CRACKS', 5 => 'TILES_FELL', 6 => 'CHIMNEY_CRACKS', 7 => 'BROKEN_WINDOWS', 8 => 'MASONRY_FELL', 9 => 'CHIMNEY_FELL', 10 => 'WALL_COLLAPSED', 11 => 'ADDITION_SEPARATED', 12 => 'BUILDING_MOVED'))),
+      'damage'     => new sfValidatorChoice(array('choices' => array(0 => 'NONE', 1 => 'HAIRLINE_CRACKS', 2 => 'CRACKED_WINDOW', 3 => 'SOME_LARGE_WALL_CRACKS', 4 => 'MANY_LARGE_WALL_CRACKS', 5 => 'TILES_FELL', 6 => 'CHIMNEY_CRACKS', 7 => 'BROKEN_WINDOWS', 8 => 'MASONRY_FELL', 9 => 'OLD_CHIMNEY_FELL', 10 => 'NEW_CHIMNEY_FELL', 11 => 'WALL_COLLAPSED', 12 => 'ADDITION_SEPARATED', 13 => 'BUILDING_MOVED'))),
       'created_at' => new sfValidatorDateTime(),
       'updated_at' => new sfValidatorDateTime(),
     ));

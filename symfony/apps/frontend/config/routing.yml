@@ -5,7 +5,11 @@
 homepage:
   url:   /
   param: { module: quake, action: index }
-  
+
+quake_map:
+  url: /quake/:id/map
+  params: { module: quake, action: map }
+
 quake_list_api:
   url: /quakes.:sf_format
   params: { module: quake, action: apiList }
