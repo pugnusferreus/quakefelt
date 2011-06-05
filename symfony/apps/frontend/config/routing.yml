@@ -26,6 +26,17 @@ quake_reports_api:
   requirements:
     sf_format: json
 
+
+report:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                Report
+    module:               report
+    prefix_path:          /quake/:earthquake_id/report
+    column:               id
+    with_wildcard_routes: true
+    actions:             [new,create]
+
 # generic rules
 # please, remove them by adding more specific rules
 default_index:

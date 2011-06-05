@@ -12,5 +12,7 @@ class ReportForm extends BaseReportForm
 {
   public function configure()
   {
+
+    unset($this['updated_at'], $this['created_at'], $this['latitude'], $this['longitude']);
   }
 }

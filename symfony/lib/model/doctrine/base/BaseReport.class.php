@@ -16,6 +16,7 @@
  * @property enum $duration
  * @property enum $reaction
  * @property enum $response
+ * @property string $response_other
  * @property boolean $stand
  * @property enum $sway
  * @property enum $creak
@@ -47,6 +48,7 @@
  * @method enum                getDuration()                Returns the current record's "duration" value
  * @method enum                getReaction()                Returns the current record's "reaction" value
  * @method enum                getResponse()                Returns the current record's "response" value
+ * @method string              getResponseOther()           Returns the current record's "response_other" value
  * @method boolean             getStand()                   Returns the current record's "stand" value
  * @method enum                getSway()                    Returns the current record's "sway" value
  * @method enum                getCreak()                   Returns the current record's "creak" value
@@ -77,6 +79,7 @@
  * @method Report              setDuration()                Sets the current record's "duration" value
  * @method Report              setReaction()                Sets the current record's "reaction" value
  * @method Report              setResponse()                Sets the current record's "response" value
+ * @method Report              setResponseOther()           Sets the current record's "response_other" value
  * @method Report              setStand()                   Sets the current record's "stand" value
  * @method Report              setSway()                    Sets the current record's "sway" value
  * @method Report              setCreak()                   Sets the current record's "creak" value
@@ -225,6 +228,10 @@ abstract class BaseReport extends sfDoctrineRecord
              'notnull' => true,
              'default' => 'NONE',
              ));
+        $this->hasColumn('response_other', 'string', 255, array(
+             'type' => 'string',
+             'length' => 255,
+             ));
         $this->hasColumn('stand', 'boolean', null, array(
              'type' => 'boolean',
              'notnull' => true,
@@ -331,7 +338,6 @@ abstract class BaseReport extends sfDoctrineRecord
              ));
         $this->hasColumn('building', 'string', 100, array(
              'type' => 'string',
-             'notnull' => true,
              'length' => 100,
              ));
         $this->hasColumn('story', 'text', null, array(

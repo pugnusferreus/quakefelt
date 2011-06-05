@@ -77,6 +77,8 @@ Report:
       values: ['NONE','DOORWAY','DUCKED','RAN_OUTSIDE','OTHER']
       notnull: true
       default: NONE
+    response_other:
+      type: string(255)
     stand:
       type: boolean
       notnull: true
@@ -129,7 +131,6 @@ Report:
       notnull: true
     building:
       type: string(100)
-      notnull: true
     story:
       type: text
     mmi:
