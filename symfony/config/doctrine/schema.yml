@@ -55,6 +55,8 @@ Report:
       values: ['INSIDE','OUTSIDE','STOPPED_VEHICLE','MOVING_VEHICLE','OTHER']
       notnull: true
       default: INSIDE
+    situation_other:
+      type: string(255)
     motion:
       type: enum
       values: ['NOT_FELT','WEAK','MILD','MODERATE','STRONG','VIOLENT']
