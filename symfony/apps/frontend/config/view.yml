@@ -13,7 +13,7 @@ default:
     #robots:       index, follow
 
   stylesheets:
-                  - jquery.mobile-1.0a4.1.css
+                  - http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.css
                   - style.css?v=1
 
   javascripts:

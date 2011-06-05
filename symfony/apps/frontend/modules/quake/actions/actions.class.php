@@ -20,6 +20,16 @@ class quakeActions extends sfActions
 
   }
 
+  public function executeFeed(sfWebRequest $request)
+  {
+    sfConfig::set('sf_web_debug', false);
+
+    $this->quake = EarthquakeTable::getInstance()->createQuery('earthquake')
+              ->innerJoin('earthquake.Reports reports')
+              ->where('earthquake.id = ?', $request->getParameter('id'))
+              ->fetchOne(array(), Doctrine::HYDRATE_ARRAY);
+  }
+
   public function executeMap(sfWebRequest $request)
   {
     sfConfig::set('sf_web_debug', false);
