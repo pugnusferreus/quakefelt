@@ -173,11 +173,85 @@ $(window).load(function() {
 		// load the data for this marker
 		var report = hash[marker.title],
 			days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-
 		
-		//On Monday I felt/was woken by/slept through (asleep) a quake while inside/outside (physical situation). In Melbourne at 20 (distance to epicentre) km from the epicentre. The shaking was violent (strength) and I felt frightened (emotions). I hid under a table (action) during the 30 seconds (time) of shaking. Personal notes: This is a little story I can add to my report. Maxium of x characters would be good.
+		var MMIHash = {
+			"motion" : {
+				"NOT_FELT": 0,
+				"WEAK": 1,
+				"MILD": 2,
+				"MODERATE": 3,
+				"STRONG": 4,
+				"VIOLENT": 5
+			},
+			"reaction": {
+				"NONE": 0,
+				"LITTLE": 1,
+				"EXCITEMENT": 2,
+				"SOMEWHAT_FRIGHTENED": 3,
+				"VERY_FRIGHTENED": 4,
+				"EXTREMELY_FRIGHTENED": 5
+			},
+			"stand": {
+				"NO": 0,
+				"YES": 1
+			},
+			"shelf": {
+				"NO": 0,
+			    "RATTLED_SLIGHTLY": 0,
+		        "RATTLED_LOUDLY": 0,
+		        "FEW_TOPPLED": 1,
+		        "MANY_FELL": 2,
+		        "MOST_FELL": 3
+			},
+			"pictures": {
+				"NO": 0,
+				"NONE_FELL": 1,
+				"SOME_FELL": 1
+		  	},
+			"furniture": {
+				"NO": 0,
+				"YES": 1
+			},
+			"damage": {
+				"NONE": 0,
+			    "HAIRLINE_CRACKS": 0.5,
+			    "SOME_LARGE_WALL_CRACKS": 0.5,
+			    "MANY_LARGE_WALL_CRACKS": 0.75,
+			    "TILES_FELL": 1,
+			    "CHIMNY_CRACKS": 1,
+			    "CRACKED_WINDOW": 2,
+			    "BROKEN_WINDOWS": 2,
+			    "MASONRY_FELL": 2,
+			    "OLD_CHIMNEY_FELL": 2,
+			    "NEW_CHIMNEY_FELL": 3,
+			    "WALL_COLLAPSED": 3,
+			    "ADDITION_SEPERATED": 3,
+			    "BUILDING_MOVED": 3
+			}
+		}
+		
+		/* Work out MMI using my mighty math power */
+		var damages = $.grep(report.Damages,function(el,index) {
+			if(index > 1) {
+				return MMIHash.damage[el.damage] > MMIHash.damage[report.Damages[index-1].damage];
+			}
+		});
+		
+		var calc = (5 * report.felt) + MMIHash.motion[report.motion] + MMIHash.reaction[report.reaction] + (2 * MMIHash.stand[report.stand]) + (5 * MMIHash.shelf[report.shelf]) + (2 * MMIHash.pictures[report.picture]) + (3 * MMIHash.furniture[report.furniture]) + (5 * damages);
+		
+		var intensity;
+		if(calc < 6.53 && report.felt === "0") {
+			intensity = 1
+		} else if(calc < 6.53 && report.felt === "1") {
+			intensity = 2 
+		} else {
+			intensity = (3.4 * Math.log(calc)) - 4.38;
+		}
+		
+		
 		$("#quake-report").html([
 			"<h2>"+report.reporter_name+"</h2>",
+			"<p class=mmi"+intensity+">"+intensity+"</p>",
 			"<p>",
 				"On ",
 				days[new Date(report.created_at.replace(/\-/g,"/")).getDay()],

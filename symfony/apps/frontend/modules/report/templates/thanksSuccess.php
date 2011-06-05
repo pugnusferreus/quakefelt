@@ -36,7 +36,7 @@
 
       <div class="story">
 
-        <img src="img/bubble.png" />
+        <img src="/images/bubble.png" />
 
         <p>On <strong>Monday</strong> I <strong>felt/was woken by/slept through (asleep)</strong> a quake while <strong>inside/outside (physical situation)</strong>. In <strong>Melbourne</strong> at <strong>20 (distance to epicentre)</strong> km from the epicentre. The shaking was <strong>violent (strength)</strong> and I felt <strong>frightened (emotions)</strong>. I <strong>hid under a table (action)</strong> during the <strong>30 seconds (time)</strong> of shaking.</p>
          <p><strong>Personal notes:</strong> This is a little story I can add to my report. Maxium of x characters would be good.</p>
@@ -49,7 +49,7 @@
 
   <div id="button-row">
       <div id="toggleView">
-        <a href="" class="c-button grey ui-corner-all">Back to Map</a>
+        <a href="<?php echo url_for('quake/map?id=3052276') ?>" class="c-button grey ui-corner-all">Back to Map</a>
       </div>
   </div>
 

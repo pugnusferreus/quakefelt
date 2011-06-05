@@ -1,6 +1,13 @@
 .k-report {
 	padding: 10px 0 20px 0	;
 	border-bottom: 1px solid #c7c7c7;
+	clear: both;
+}
+
+.k-myown {
+	padding: 10px 0 20px 0	;
+	border: none;
+	clear: both;
 }
 
 .k-report .reporter {
@@ -8,15 +15,30 @@
 	font-size: 18px;
 }
 
+.k-thanks {
+	margin: 10px 20px 0 20px;
+	padding: 0 0 20px 0;
+	font-size: 24px;
+	text-align: center;
+	border-bottom: 1px dotted #c7c7c7;
+}
+
+.k-thanks p {
+	text-align: left;
+	color: #90877d;
+	text-align: center;
+	font-size: 13px;
+}
+
 @media only screen and (-webkit-min-device-pixel-ratio: 2) {
 .k-report .reporter {
-	background: url(../img/user@2x.png) 0 0 no-repeat;
+	background: url(/images/user@2x.png) 0 0 no-repeat;
 	}
 }
 
 .k-report .reporter .name {
 	padding: 3px 0 3px 55px;
-	background: url(../img/user.png) 0 0 no-repeat;
+	background: url(/images/user.png) 0 0 no-repeat;
 }
 
 .k-report .reporter .name span {
@@ -26,7 +48,7 @@
 	-moz-border-radius: 40px;
 	border-radius: 40px;
 	width: 30px;
-	line-height: 29px;
+	line-height: 30px;
 	text-align: center;
 	font-size: 11px;
 	height: 30px;
@@ -64,24 +86,26 @@
 }
 
 .k-report .reporter .name span.mmi8 {
-	background: #AEDAFF;
-	border-color: #7B9EBC;
+	background: #FF7200;
+	border-color: #9A5115;
+	color: #fff;
+	text-shadow: none;
 }
 
-.k-report .reporter .name span.mmi3 {
-	background: #AEDAFF;
-	border-color: #7B9EBC;
+.k-report .reporter .name span.mmi9 {
+	background: #E10000;
+	border-color: #8A0E0E;
+	color: #fff;
+	text-shadow: none;
 }
 
-.k-report .reporter .name span.mmi3 {
-	background: #AEDAFF;
-	border-color: #7B9EBC;
+.k-report .reporter .name span.mmi10 {
+	background: #990000;
+	border-color: #480000;
+	color: #fff;
+	text-shadow: none;
 }
 
-.k-report .reporter .name span.mmi3 {
-	background: #AEDAFF;
-	border-color: #7B9EBC;
-}
 
 .k-report .reporter .name p {
 	text-align: left;
@@ -99,12 +123,46 @@
 	padding: 15px;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
-	border-radius: 5px;	
+	border-radius: 5px;
 }
 
 .k-report .reporter .story img {
 	position:absolute;
 	top: -12px;
 	right: 30px;
-}	
-	
+}
+
+.intensity {
+	width: 50px;
+	text-align: center;
+	padding: 6px 4px 4px 4px;
+	float: left;
+	background: #81786D url(/images/quake-icon.png) center 27px no-repeat;
+	margin: 0 10px 0 0;
+	height: 54px;
+}
+
+h3.ui-li-heading {
+	color: #342F28;
+	padding: 2px 0 5px 0 !important;
+	margin: 0 !important;
+}
+
+.ui-link-inherit p.ui-li-desc {
+	text-align: left !important;
+	padding: 0 !important;
+	margin: 0 !important;
+	list-style: none !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
