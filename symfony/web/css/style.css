@@ -217,7 +217,7 @@ textarea.contenteditable {-webkit-appearance: none;}
 */
 
 #foo{
-	background:#e1dbd4 url(../img/bg.jpg) repeat;
+	background:#e1dbd4 url(/images/bg.jpg) repeat;
 }
 
 #oldHeader{
@@ -277,7 +277,7 @@ div.brownBar{
 
 .richter{
 	border-right:1px solid #464138;
-	background: url(../img/quake.png) center 30px no-repeat;
+	background: url(/images/quake.png) center 30px no-repeat;
 }
 
 .event{
@@ -292,7 +292,7 @@ a.home-button{
 	height:36px;
 	margin-top:9px;
 	text-indent:-9999px;
-	background:url(../img/home.png) no-repeat;
+	background:url(/images/home.png) no-repeat;
 }
 
 #homeHeader h1{
@@ -300,7 +300,7 @@ a.home-button{
 	height:101px;
 	margin:0 auto;
 	text-indent:-999px;
-	background:url(../img/logo.png) no-repeat;
+	background:url(/images/logo.png) no-repeat;
 }
 
 .strong{
