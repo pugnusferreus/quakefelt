@@ -24,8 +24,7 @@ var QS = QS || {};
 				lat = coords.latitude,
 				lng = coords.longitude,
 				point1 = new LatLon(lat, lng), point2,
-				noquake = true, distance, quakeDate, dateNow = Date.now(),
-				dateDiff, hourMS = 3600000;
+				noquake = true, distance;
 
 			
 			// Build list of event sbased on RSS feed data, converted to JSON through YQL
@@ -35,8 +34,6 @@ var QS = QS || {};
 				list.html("");
 				
 				$.each(data,function(index,key) {
-					quakeDate = new Date(key.time_of_quake.replace(/\-/g,"/")).getTime();
-					dateDiff = Math.floor(Math.abs(quakeDate - dateNow)/hourMS);
 					point2 = new LatLon(key.latitude, key.longitude);
 					distance = point1.distanceTo(point2);
 
@@ -44,10 +41,10 @@ var QS = QS || {};
 					if(distance <= distanceThreshhold) {
 						noquake = false;
 						
-						list.append(["<li><a href='map.html?qid="+key.id+"' rel='external'>",
+						list.append(["<li><a href='map2.html?qid="+key.id+"' rel='external'>",
 							"<div class='intensity'>"+key.magnitude+"</div>",
 							"<h3>"+key.description+"</h3>",
-							"<p>"+distance+"km away, "+dateDiff+" hrs ago<br />"+key.report_count+" Existing reports</p>",
+							"<p>"+distance+"km away, "+QS.dateDiff(key.time_of_quake)+" hrs ago<br />"+key.report_count+" Existing reports</p>",
 						"</a></li>"].join(''));
 					}
 				});
@@ -87,9 +84,19 @@ var QS = QS || {};
 		return obj[param];
 	}
 	
+	// Return hours difference between now and quake date to the nearest whole number
+	function dateDiff(date, overidenow) {
+		var dateNow = overidenow || Date.now(),
+			hourMS = 3600000,
+			quakeDate = new Date(date.replace(/\-/g,"/")).getTime();
+			
+		return Math.floor(Math.abs(quakeDate - dateNow)/hourMS);
+	}
+	
 	window["QS"] = {
 		queryString: queryString,
-		getLocation: getLocation
+		getLocation: getLocation,
+		dateDiff: dateDiff
 	}
 	
 	location.bind("click", getLocation);
