@@ -41,7 +41,7 @@ var QS = QS || {};
 					if(distance <= distanceThreshhold) {
 						noquake = false;
 						
-						list.append(["<li><a href='map2.html?qid="+key.id+"' rel='external'>",
+						list.append(["<li><a href='quake/"+key.id+"/map?qid="+key.id+"' rel='external'>",
 							"<div class='intensity'>"+key.magnitude+"</div>",
 							"<h3>"+key.description+"</h3>",
 							"<p>"+distance+"km away, "+QS.dateDiff(key.time_of_quake)+" hrs ago<br />"+key.report_count+" Existing reports</p>",
